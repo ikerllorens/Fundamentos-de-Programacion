@@ -36,7 +36,7 @@ jobs:
           remote-password: ${{ secrets.ANTARES_PWD }} 
           remote-user: ${{ secrets.ANTARES_USERNAME }}
           remote-path: "/home/ic12ill/CLASS/"
-          sync: delta
+          sync: full
           sync-delta-excludes: |
             **/.git*
             *.md
