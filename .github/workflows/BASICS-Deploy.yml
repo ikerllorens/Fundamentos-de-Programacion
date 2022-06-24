@@ -27,10 +27,9 @@ jobs:
       - name: Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
-          server: antares.dci.uia.mx
+          server: ${{ secrets.ANTARES_URL }}
           username: ${{ secrets.ANTARES_USERNAME }}
           protocol: ftps
-          port: 22
           server-dir: /home/ic12ill/CLASS/
           password: ${{ secrets.ANTARES_PWD }}
           exclude: |
