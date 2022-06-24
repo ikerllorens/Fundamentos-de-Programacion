@@ -31,4 +31,4 @@ jobs:
           cd BASICS
           gcc -c Comentarios.c
           gcc -o Comentarios.exe Comentarios.o
-          .\Comentarios.out
+          ./Comentarios.out
