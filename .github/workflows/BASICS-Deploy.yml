@@ -24,6 +24,8 @@ jobs:
     name: deploy
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3 
+      
       - name: Sync files
         uses: milanmk/actions-file-deployer@1.11
         with:
