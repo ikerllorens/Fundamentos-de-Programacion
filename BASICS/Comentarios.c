@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 // Declaración de funciones
-int UnaFuncionEspejo(int parametro);
+int Cuadrado(int parametro);
 
 /**
  * © Iker Llorens
