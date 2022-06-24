@@ -17,12 +17,13 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
-    uses: ./.github/workflows/BASICS/BASICS-Build.yml
+    uses: ./.github/workflows/BASICS-Build.yml
 
   deploy:
     name: deploy
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - name: Deploy Comentarios.c
 
       env:
