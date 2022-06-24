@@ -1,0 +1,46 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Deploy BASICS
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+  workflow_call:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    uses: ./.github/workflows/BASICS-Build.yml
+
+  deploy:
+    needs: build
+    name: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      
+      - name: Upload to Antares
+        uses: milanmk/actions-file-deployer@1.11
+        with:
+          remote-protocol: "sftp"
+          remote-host: ${{ secrets.ANTARES_URL }}
+          remote-password: ${{ secrets.ANTARES_PWD }} 
+          remote-user: ${{ secrets.ANTARES_USERNAME }}
+          remote-path: "/home/ic12ill/CLASS/"
+          sync: full
+          sync-delta-excludes: |
+            **/.git*
+            *.md
+            *.out
+            *.exe
+            *.o
+      
