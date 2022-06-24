@@ -32,7 +32,6 @@ jobs:
           username: ${{ secrets.ANTARES_USERNAME }}
           localDir: './'
           remoteDir: '/home/ic12ill/CLASS/'
-          dryRun: true # use dryRun for test
           exclude: '**/.git*,**/.git*/**,*.md,*.out,*.exe,*.o'
           runs-on: ubuntu-latest
       
