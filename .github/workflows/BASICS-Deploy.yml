@@ -25,18 +25,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Sync files
-        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        uses: wangyucode/sftp-upload-action@v1.3.2
         with:
-          server: ${{ secrets.ANTARES_URL }}
+          host: ${{ secrets.ANTARES_URL }}
+          password: ${{ secrets.ANTARES_PWD }} 
           username: ${{ secrets.ANTARES_USERNAME }}
-          protocol: ftps-legacy
-          server-dir: /home/ic12ill/CLASS/
-          password: ${{ secrets.ANTARES_PWD }}
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
-            *.md
-            *.out
-            *.exe
-            *.o
+          localDir: './'
+          remoteDir: '/home/ic12ill/CLASS/'
+          dryRun: true # use dryRun for test
+          exclude: '**/.git*,**/.git*/**,*.md,*.out,*.exe,*.o'
+          runs-on: ubuntu-latest
+      
