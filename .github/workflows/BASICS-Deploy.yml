@@ -20,14 +20,24 @@ jobs:
     uses: ./.github/workflows/BASICS-Build.yml
 
   deploy:
+    #needs: build
     name: deploy
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Deploy Comentarios.c
-
-        env:
-          ANTARES_USERNAME: ${{ secrets.ANTARES_USERNAME }}
-          ANTARES_PWD: ${{ secrets.ANTARES_PWD }}
-        run: |
-          ftp ftp://"$ANTARES_USERNAME":"$ANTARES_PWD"@antares.dci.uia.mx:22/home/"$ANTARES_USERNAME"
+      - name: Sync files
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: antares.dci.uia.mx
+          username: ${{ secrets.ANTARES_USERNAME }}
+          protocol: ftps
+          port: 22
+          server-dir: /home/ic12ill/CLASS/
+          password: ${{ secrets.ANTARES_PWD }}
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            *.md
+            *.out
+            *.exe
+            *.o
