@@ -39,7 +39,6 @@ jobs:
           sync: delta
           sync-delta-excludes: |
             **/.git*
-            **/.git*/**
             *.md
             *.out
             *.exe
