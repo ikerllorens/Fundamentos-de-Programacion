@@ -30,4 +30,4 @@ jobs:
           ANTARES_USERNAME: ${{ secrets.ANTARES_USERNAME }}
           ANTARES_PWD: ${{ secrets.ANTARES_PWD }}
         run: |
-          ftp://"$ANTARES_USERNAME":"$ANTARES_PWD"@antares.dci.uia.mx:22
+          ftp://"$ANTARES_USERNAME":"$ANTARES_PWD"@antares.dci.uia.mx:22/home/ic12ill
