@@ -2,7 +2,7 @@
  * Directivas del Preprocesador
  *
  * Generalmente aqui se declaran las bibloiotecas que utilizamos en el programa. Las bibliotecas pueden ser
- * del sistema (e.g. <stdio.h> <strings.h> <time.h> <math.h>) o bibliotecas que nosotros hayamos creado o paquetes
+ * del sistema (e.g. <stdio.h> <string.h> <time.h> <math.h>) o bibliotecas que nosotros hayamos creado o paquetes
  * externos (e.g. "funciones.h" "operaciones.h"). Es importante notar que las bibliotecas definidas del sistema se declaran 
  * entre <> mientras que las bibliotecas y directivas definidas por nosotros se declaran entre ""
  * En estas directivas se declaran y definen funciones que no están en este archivo, pero son utilizadas.
@@ -46,6 +46,8 @@ int main(void)
 	int numero2 = 0;
 	//También podemos declarar varias variables en una sola línea
 	int numero3=0, numero4=0;
+	// Declarando variable sin 
+	int OtraVariable;
 	
 	// Imprimiendo una instrucción para el usuario y esperando la entrada del usuario
 	printf("Dame un número para sumar y restar: ");
