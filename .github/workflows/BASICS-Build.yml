@@ -39,6 +39,5 @@ jobs:
           gcc -c EstructuraBasicaPrograma.c
           gcc -o EstructuraBasicaPrograma.out EstructuraBasicaPrograma.o
           ./EstructuraBasicaPrograma.out
-          2
-          5
+          
           
