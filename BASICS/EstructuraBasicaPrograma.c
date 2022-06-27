@@ -5,7 +5,7 @@
  * del sistema (e.g. <stdio.h> <strings.h> <time.h> <math.h>) o bibliotecas que nosotros hayamos creado o paquetes
  * externos (e.g. "funciones.h" "operaciones.h"). Es importante notar que las bibliotecas definidas del sistema se declaran 
  * entre <> mientras que las bibliotecas y directivas definidas por nosotros se declaran entre ""
- *
+ * En estas directivas se declaran y definen funciones que no están en este archivo, pero son utilizadas.
  */
 #include <stdio.h>
 
@@ -66,12 +66,17 @@ int main(void)
 	return 0;	
 }
 
-// Definiendo la función exactamente de la misma manera como fue declarada
 /**
- * A brief description. A more elaborate class description
- * @param int parametro1
- * @param int parametro2
- * @return 
+ * Función que toma dos parámetros y devuelve la suma de los dos. La función 
+ * hace crea una variable local qen la cual se almacena el resultado y luego es
+ * retornado a la función desde la que fue llamada.
+ *
+ * Es importante notar que la definición de la función es exactamente igual a como
+ * fue declarada al principio de la función.
+ * 
+ * @param int parametro1 Numero a sumar
+ * @param int parametro2 El segundo número a sumar
+ * @return Entero que representa la suma de los dos valore enviados a la función
  */
 int Suma(int parametro1, int parametro2)
 {
@@ -84,4 +89,20 @@ int Suma(int parametro1, int parametro2)
 	
 	// Fin de la función y regresamos EL VALOR de la variable resultado
 	return resultado;
+}
+
+
+/**
+ * Función que resta el valorARestar a parametro1. La función regresa el valor que resulta de la resta
+ * Es importante recalcar que parametro1 tiene el miso nombre aquí y en la función Suma, pero son
+ * variables diferentes que no tienen nada que ver entre sí, ya que únicamente existen dentro de la
+ * ejecución de la función
+ * @param int parametro1 Valor del que se va a restar
+ * @param int valorARestar Valor que queremos restar a parametro1
+ * @return La resta parametro1 - valorARestar
+ */
+int Resta(int parametro1, int valorARestar)
+{
+	// También podemos realizar varias instrucciones en una sola línea
+	return parametro1 - valorARestar; 
 }
