@@ -32,3 +32,10 @@ jobs:
           gcc -c Comentarios.c
           gcc -o Comentarios.exe Comentarios.o
           ./Comentarios.exe
+          
+      - name: Build Estructura Basica de Un Programa
+        run: |
+          cd BASICS
+          gcc -c EstructuraBasicaPrograma.c
+          gcc -o EstructuraBasicaPrograma.out EstructuraBasicaPrograma.o
+          ./EstructuraBasicaPrograma.out
