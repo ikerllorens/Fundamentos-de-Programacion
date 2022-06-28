@@ -22,9 +22,7 @@ jobs:
     uses: ./.github/workflows/IO-Build.yml
 
   deploy:
-    needs: |
-      build-BASICS
-      build-IO
+    needs: [build-BASICS,build-IO]
     name: deploy
     runs-on: ubuntu-latest
     steps:
