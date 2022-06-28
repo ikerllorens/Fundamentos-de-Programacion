@@ -16,11 +16,17 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  build-BASICS:
+    name: Build Basics
     uses: ./.github/workflows/BASICS-Build.yml
+  build-IO:
+    name: Build IO
+    uses: ./.github/workflows/IO-Build.yml
 
   deploy:
-    needs: build
+    needs: |
+      build-BASICS
+      build-IO
     name: deploy
     runs-on: ubuntu-latest
     steps:
