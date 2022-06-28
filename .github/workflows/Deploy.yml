@@ -17,10 +17,8 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build-BASICS:
-    name: Build Basics
     uses: ./.github/workflows/BASICS-Build.yml
   build-IO:
-    name: Build IO
     uses: ./.github/workflows/IO-Build.yml
 
   deploy:
