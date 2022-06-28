@@ -7,14 +7,14 @@
 int main(void)
 {
 	int UnEntero = 13;
-	int OtroEntero = 23;
+	int OtroEntero = 113;
 	char UnCaracter = 'i';
 	float UnNumeroFlotante = 13.4;
-	char[] UnaCadena = "foo"; // Para más información sobre cadenas busca el ejemplo de cadenas dentro del repositorio :)
+	char UnaCadena[10] = "foo"; // Para más información sobre cadenas busca el ejemplo de cadenas dentro del repositorio :)
 	
 	// Imprimimos una cadena de caracteres (string) a la consola
 	printf("Hola Mundo! ");
-	// 
+	// El caracter de escape \n es un salto de línea. Cada \n es un salto de línea 
 	printf("Esto también es una cadena de caracteres :) 2022, 34,4\n");
 
 	/* Para imprimir un valor de alguna variable, printf es una función muy útil para esto, pero en C
@@ -28,8 +28,17 @@ int main(void)
 	// argumento.
 	printf("El valor de la variable UnEntero es: %d\n", UnEntero);
 	// En este caso, le enviamos dos variables a printf ya que tenemos dos marcadores en nuestra cadena.
-	printf("El valor de la variable UnEntero es: %d y el de la variable OtroEntero es: %d", UnEntero, OtroEntero);
+	printf("El valor de la variable UnEntero es: %d y el de la variable OtroEntero es: %d\n", UnEntero, OtroEntero);
 	
+	// Podemos también imprimir caracteres
+	printf("El valor de UnCaracter es: %c\n", UnCaracter);
+	// También podemos imprimir umn caracter como un entero y un entero como un caracter (Para más información
+	// ver el ejemplo de BASICS de tipos)
+	printf("El valor de UnCaracter en entero es: %d\nY el valor de OtroEntero en char es: %c\n\n", UnCaracter, OtroEntero);
+	
+	// Algo muy curioso. Y también ejemplificando que podemos imprimir un valor diferectemente
+	// Que valor imprimirá esto?
+	printf("Si imprimo el caracter %c, su valor en ASCII es: %d\n", '4', '4');
 	
 	return 0;
 }
