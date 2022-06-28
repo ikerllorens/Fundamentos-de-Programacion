@@ -16,8 +16,8 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build-BASICS:
-    name: Build BASICS
+  build-IO:
+    name: Build IO
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -26,18 +26,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      - name: Build Comentarios.c
+      - name: Build EjemploPrintf.c
         run: |
-          cd BASICS
-          gcc -c Comentarios.c
-          gcc -o Comentarios.exe Comentarios.o
-          ./Comentarios.exe
-          
-      - name: Build Estructura Basica de Un Programa
-        run: |
-          cd BASICS
-          gcc -c EstructuraBasicaPrograma.c
-          gcc -o EstructuraBasicaPrograma.out EstructuraBasicaPrograma.o
-          ./EstructuraBasicaPrograma.out
+          cd IO
+          gcc -c EjemploPrintf.c
+          gcc -o EjemploPrintf.exe EjemploPrintf.o
+          ./EjemploPrintf.exe
           
           
