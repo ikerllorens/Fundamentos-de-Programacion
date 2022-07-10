@@ -5,7 +5,10 @@ int Cuadrado(int parametro);
 
 /**
  * © Iker Llorens
- * Descripción del programa y su intención
+ * Descripción del programa y su intención. Es importante notar que cada programador, empresa, organización,
+ * profesor tienen un estilo de documentación. Lo más importante no es pelear cual es mejor, sino adaptarse al 
+ * estilo. Varios lenguajes tienen herramientas que requieren de documentación estandarizada (con un formato 
+ * específico) para ayudar al desarrollador a navegar el código más fácilmente. No visto en esta materia.
  */
 int main(void)
 {
@@ -27,9 +30,10 @@ int main(void)
 }
 
 /**
- * A brief description. A more elaborate class description
- * @param int parametro 
- * @return 
+ * Descripción del funcionamiento de la función. Es importante hacer que quien lea nuestro código
+ * pueda entender la funcionalidad de la función con esta descripción sin tener que descifrar el código
+ * @param int parametro Descripción del parametro que la función recibe
+ * @return Describir el valor de regreso. DEscribir también casos especiales (TODOS los posibles resultados)
  */
 int Cuadrado(int parametro)
 {
