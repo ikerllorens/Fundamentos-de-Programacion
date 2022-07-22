@@ -11,7 +11,7 @@ int main(void)
 	
 	// Mientras que entero sea mayor o igual a 0, ejecuta lo que está entre llavaes
 	// Para más información acerca de ciclos e instrucciones de control ver los ejemplos de ciclos e instrucciones 
-	// de control
+	// de control ver la sección correspondiente.
     while (Entero >= 0)
     {
         Entero += 1;
