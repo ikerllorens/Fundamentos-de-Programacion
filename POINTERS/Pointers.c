@@ -1,11 +1,15 @@
 #include <stdio.h>
 
+/**
+ * Programa que ejemplifica el uso de punteros, con documentación sbre el uso básico al igul que el
+ * @return
+ */
 int main(void)
 {
 	/*
 	 * Los apuntadores se declaran con un asterisco antes del nombre del apuntador, Aunque tienen el tipo del apuntador
 	 * antes de su nombre, no son ese tipo, sino un apuntador a una dirección de memoria que contiene un valor de ese
-	 * tipo. El apuntador en si almacena una DIRECCIÓn de memoria. 
+	 * tipo. El apuntador en sí almacena una DIRECCIÓN de memoria.
 	 */
 	int *UnApuntador;
 	int *OtroApuntador;
