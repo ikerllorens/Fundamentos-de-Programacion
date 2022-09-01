@@ -21,7 +21,7 @@
  * de la función principal.
  */
 int Suma(int parametro1, int parametro2);
-int Resta(int paramtero1, int parametro2);
+int Resta(int parametro1, int valorARestar);
 
 /*
  * Función Principal
