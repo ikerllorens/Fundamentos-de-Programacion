@@ -25,7 +25,7 @@ jobs:
     uses: ./.github/workflows/POINTERS-Build.yml
 
   deploy:
-    needs: [build-BASICS,build-IO]
+    needs: [build-BASICS, build-IO, build-EJERCICIOS, build-POINTERS]
     name: deploy
     runs-on: ubuntu-latest
     steps:
