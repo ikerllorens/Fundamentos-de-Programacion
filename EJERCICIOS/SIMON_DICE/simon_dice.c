@@ -63,12 +63,15 @@ int SimonDice(int arregloDeJuego[])
     system("clear");
     for (i = 0; i < TURNOS; i++)
     {
+        printf("Memoriza esto, presiona enter cuando estes list@: \n");
         for (j = 0; j <= i; j++)
         {
             printf("%i ", arregloDeJuego[j]);
         }
 
         getchar();
+        system("clear");
+        printf("Dame la secuencia, introduce un número a la vez y presiona enter por cada número");
 
         for (j = 0; j <= i; j++)
         {
@@ -79,6 +82,7 @@ int SimonDice(int arregloDeJuego[])
 
         printf("Adivinaste todos los números de esta vuelta!! Presiona enter...\n");
         getchar();
+        system("clear");
     }
 
     return 1;
