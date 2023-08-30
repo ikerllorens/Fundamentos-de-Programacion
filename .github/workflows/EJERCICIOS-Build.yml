@@ -1,0 +1,57 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Build EJERCICIOS
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  pull_request:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+  workflow_call:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build-BASICS:
+    name: Build EJERCICIOS
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+
+      - name: Build Circulo.c
+        run: |
+          cd EJERCICIOS
+          gcc -c Circulo.c
+          gcc -o Circulo.exe Circulo.o
+          ./Circulo.exe
+
+      - name: Build Abedecedario Bien
+        run: |
+          cd EJERCICIOS/ABECEDARIO
+          gcc -c Abecedario.c
+          gcc -o Abecedario.out Abecedario.o
+          ./Abecedario.out
+
+      - name: Build Abedecedario Malo
+        run: |
+          cd EJERCICIOS/ABECEDARIO
+          gcc -c AbecedarioBad.c
+          gcc -o AbecedarioBad.out AbecedarioBad.o
+          ./Abecedario.out
+
+      - name: Build Simon Dice
+        run: |
+          cd EJERCICIOS/SIMON_DICE
+          gcc -c simon_dice.c
+          gcc -o simon_dice.out simon_dice.o
+          ./simon_dice.out
+          
+          
