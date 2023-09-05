@@ -12,6 +12,8 @@ int main(void)
 	
 	// También conocido como string o cadnea de caracteres
 	char[15] UnArregloDeCaracteres = {'H', 'o', 'l', 'a', ' ', 'M', 'u', 'n', 'd', 'o'}; 
+	char[15] OtroArreglo = "Hello World!"; // No se puede asignar de esta manera a menos que sea en inicialización de variable
+	
 	float PuntoFlotante = 13.4;
 	int* PunteroAEntero = &Entero; // Para más información de punteros, ver los ejercicios de punteros
 	int* PunteroLibre = NULL;
