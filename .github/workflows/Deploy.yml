@@ -15,14 +15,17 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   build-BASICS:
     uses: ./.github/workflows/BASICS-Build.yml
   build-IO:
     uses: ./.github/workflows/IO-Build.yml
+  build-EJERCICIOS:
+    uses: ./.github/workflows/EJERCICIOS-Build.yml
+  build-POINTERS:
+    uses: ./.github/workflows/POINTERS-Build.yml
 
   deploy:
-    needs: [build-BASICS,build-IO]
+    needs: [build-BASICS, build-IO, build-EJERCICIOS, build-POINTERS]
     name: deploy
     runs-on: ubuntu-latest
     steps:
@@ -37,7 +40,7 @@ jobs:
           remote-host: ${{ secrets.ANTARES_URL }}
           remote-password: ${{ secrets.ANTARES_PWD }} 
           remote-user: ${{ secrets.ANTARES_USERNAME }}
-          remote-path: "/home/ic12ill/CLASS/"
+          remote-path: "/home/illorens/CLASS/"
           sync: full
           sync-delta-excludes: |
             **/.git*

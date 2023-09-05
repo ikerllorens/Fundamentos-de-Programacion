@@ -21,7 +21,7 @@
  * de la función principal.
  */
 int Suma(int parametro1, int parametro2);
-int Resta(int paramtero1, int parametro2);
+int Resta(int parametro1, int valorARestar);
 
 /*
  * Función Principal
@@ -43,7 +43,7 @@ int main(void)
 	también. Las mejores prácticas indican que el las vriables deben ser declaradas al principio de las funciones
 	*/
 	int numero1 = 0;
-	int numero2 = 0;
+	int numerofeliz = 0;
 	//También podemos declarar varias variables en una sola línea
 	int numero3=0, numero4=0;
 	// Declarando variable sin 
@@ -55,11 +55,11 @@ int main(void)
 	
 	// Imprimiendo una instrucción para el usuario y esperando la entrada del usuario
 	printf("Dame otro número para sumar y restarle al primer número: ");
-	scanf("%d", &numero2); // Guardando la entrada en la variable numero1. Un ejemplo de comentario
+	scanf("%d", &numerofeliz); // Guardando la entrada en la variable numero1. Un ejemplo de comentario
 	
 	//Llamando a la función suma y guardando el resultado
-	numero3 = Suma(numero1, numero2);
-	numero4 = Resta(numero1, numero2);
+	numero3 = Suma(numero1, numero1);
+	numero4 = Resta(numero1, numerofeliz);
 	
 	// Impriminedo el resultado
 	printf("El resultado de la suma es %d y el de la resta es %d\n", numero3, numero4);
