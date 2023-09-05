@@ -2,9 +2,6 @@
 
 int main(void)
 {
-	printf("TE AMOOOOO, Futuro esposo <3!!!!!!!!!!1\n"); //nota de lo mucho que te amo. Bye.
-	
-	
 	/* 
 	* Un arreglo es una serie de localidades de memoria reservadas por el sistema operativo (generalmente las localidades
 	* son contiguas). Su utilidad principal es poder almacenar varios datos del mismo tipo dentro de la misma "variable",
