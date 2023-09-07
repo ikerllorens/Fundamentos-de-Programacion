@@ -34,7 +34,7 @@ jobs:
           fetch-depth: 0
       
       - name: Upload to Antares
-        uses: milanmk/actions-file-deployer@1.11
+        uses: milanmk/actions-file-deployer@1.12
         with:
           remote-protocol: "sftp"
           remote-host: ${{ secrets.ANTARES_URL }}
