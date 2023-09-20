@@ -4,15 +4,14 @@
 
 int is_file_in_directory(char file[], char student[]);
 int copy_file(char file[], char student[], char local_dir_name[]);
-void logger(char msg[], char local_dir_name[]);
-int BuildStudentsProgram(char directory[], char student[]);
+int build_students_program(char directory[], char student[]);
 
 int main(int argc, char *argv[])
 {
     FILE *fp;
 
     char account[16] = "";
-    char cmd[256] = "";
+    char cmd[256] = "mkdir ";
 
     if (argc != 4)
     {
@@ -20,54 +19,35 @@ int main(int argc, char *argv[])
         return 0;
     }
 
-    strcat("mkdir ", argv[3]);
+    printf("Creando directorio %s\n", argv[3]);
+    strcat(cmd, argv[3]);
+    system(cmd);
 
     fp = fopen(argv[1], "r");
 
     while (fscanf(fp, "%s", account) != EOF)
     {
-        logger("-> Evaluando %s", argv[3]);
-        if (is_file_in_directory(argv[2], account) == 0)
+        printf("\n\n--------------------------\n-> Procesando %s\n", account);
+        if (is_file_in_directory(argv[2], account))
         {
             if (copy_file(argv[2], account, argv[3]) == 0)
             {
-                logger("Se copio el archivo %s", argv[2]);
+                printf("Se copio el archivo %s\n", argv[2]);
             }
             else
             {
-                logger("No se pudo copiar el archivo %s", argv[2]);
+                printf("No se pudo copiar el archivo %s\n", argv[2]);
             }
         }
         else
         {
-            logger("No se enocntro el archivo para ", argv[3]);
-            logger(account, argv[3]);
+            printf("No se encontro el archivo %s en el directorio de %s\n", argv[2], account);
         }
     }
 
     fclose(fp);
 
     return 0;
-}
-
-/*
- * Escribe un mensaje en el archivo de log y en pantalla
- * @param msg Mensaje a escribir
- * @param local_dir_name Nombre del directorio local
- */
-void logger(char msg[], char local_dir_name[])
-{
-    FILE *log;
-    char path[256] = "./";
-    strcat(path, local_dir_name);
-    strcat(path, "/log.txt");
-
-    log = fopen(path, "a");
-
-    printf("> %s\n", msg);
-    fprintf(log, "> %s\n", msg);
-
-    fclose(log);
 }
 
 /*
@@ -85,6 +65,8 @@ int is_file_in_directory(char file[], char student[])
     strcat(path, student);
     strcat(path, "/");
     strcat(path, file);
+
+    printf("Buscando %s en %s\n", file, path);
 
     fp = fopen(path, "r");
     if (fp == NULL)
@@ -106,6 +88,11 @@ int copy_file(char file[], char student[], char local_dir_name[])
     strcat(cmd, file);
     strcat(cmd, " ./");
     strcat(cmd, local_dir_name);
+    strcat(cmd, "/");
+    strcat(cmd, student);
+    strcat(cmd, ".c");
+
+    printf("Copiando %s a %s\n", file, student);
 
     fp = popen(cmd, "r");
 
@@ -121,7 +108,7 @@ int copy_file(char file[], char student[], char local_dir_name[])
     return strlen(out);
 }
 
-int BuildStudentsProgram(char directory[], char student[])
+int build_students_program(char directory[], char student[])
 {
     char out[256] = "";
     char cmd[512] = "gcc /home/";
