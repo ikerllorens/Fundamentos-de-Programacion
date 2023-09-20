@@ -40,13 +40,6 @@ jobs:
           gcc -o Abecedario.out Abecedario.o
           ./Abecedario.out
 
-      - name: Build Abedecedario Malo
-        run: |
-          cd EJERCICIOS/ABECEDARIO
-          gcc -c AbecedarioBad.c
-          gcc -o AbecedarioBad.out AbecedarioBad.o
-          ./Abecedario.out
-
       - name: Build Simon Dice
         run: |
           cd EJERCICIOS/SIMON_DICE

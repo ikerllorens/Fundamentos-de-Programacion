@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+char a1;
+
 void a(void);
 void b(void);
 void c(char aVar);
@@ -7,9 +9,8 @@ char d(void);
 
 int main(void)
 {
-    char a1;
 
-    a1 = d();
+    a = d();
     if (a1 == '\0')
     {
         printf("Hasta crees que con el error te voy a decir que hago! :D\n");
@@ -22,7 +23,7 @@ int main(void)
 void a(void)
 {
     int i;
-    for (i = 'A'; i <= 'Z'; i++)
+    for (i = 'A'; i <= 'Z'; i++);
     {
         printf("%c\n", i);
     }
