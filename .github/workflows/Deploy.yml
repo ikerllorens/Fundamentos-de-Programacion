@@ -10,6 +10,11 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+    inputs:
+      sync:
+        description: "File synchronization"
+        required: true
+        default: "full"
 
   workflow_call:
 
@@ -34,18 +39,13 @@ jobs:
           fetch-depth: 0
       
       - name: Upload to Antares
-        uses: milanmk/actions-file-deployer@1.11
+        uses: milanmk/actions-file-deployer@master
         with:
           remote-protocol: "sftp"
-          remote-host: ${{ secrets.ANTARES_URL }}
-          remote-password: ${{ secrets.ANTARES_PWD }} 
-          remote-user: ${{ secrets.ANTARES_USERNAME }}
+          remote-host: "antares.dci.uia.mx"
+          remote-password: "loli1394" 
+          remote-user: "illorens"
+          remote-port: 22
           remote-path: "/home/illorens/CLASS/"
-          sync: full
-          sync-delta-excludes: |
-            **/.git*
-            *.md
-            *.out
-            *.exe
-            *.o
+          sync: "full"
       
