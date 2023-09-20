@@ -104,7 +104,6 @@ int copy_file(char file[], char student[], char local_dir_name[])
     strcat(cmd, student);
     strcat(cmd, "/");
     strcat(cmd, file);
-
     strcat(cmd, " ./");
     strcat(cmd, local_dir_name);
 
