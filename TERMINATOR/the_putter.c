@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
         printf("\n\n--------------------------\n-> Procesando %s\n", account);
         assemble_route(account, argv[3], final_route);
         copy_to_students(final_route, argv[2]);
-        assign_permissions(final_route, argv[2], account, "usuarios");
+        assign_permissions(final_route, argv[2], account, "student");
     }
 
     fclose(fp);
@@ -71,7 +71,7 @@ void assign_permissions(char route[], char filename[], char user[], char user_gr
 {
     FILE *fp;
     char cmd[256] = "chown ";
-    char cmd_perm[256] = "chmod 700 ";
+    char cmd_perm[256] = "chmod 755 ";
     char out[512] = "";
 
     if (route[strlen(route) - 1] != '/')
