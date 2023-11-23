@@ -2,8 +2,8 @@
 #include <string.h>
 #include <stdlib.h>
 
-int copy_to_students(char route[], char route_to_file[]) ;
-void assemble_route(char student[], char route_in_students[], char final_route[] ) ;
+int copy_to_students(char route[], char route_to_file[]);
+void assemble_route(char student[], char route_in_students[], char final_route[]);
 void assign_permissions(char route[], char filename[], char user[], char user_group[]);
 void logger(char msg[], char local_dir_name[]);
 
@@ -24,6 +24,8 @@ int main(int argc, char *argv[])
 
     while (fscanf(fp, "%s", account) != EOF)
     {
+        strcpy(final_route, "");
+        printf("\n\n--------------------------\n-> Procesando %s\n", account);
         assemble_route(account, argv[3], final_route);
         copy_to_students(final_route, argv[2]);
         assign_permissions(final_route, argv[2], account, "usuarios");
@@ -34,7 +36,7 @@ int main(int argc, char *argv[])
     return 0;
 }
 
-void assemble_route(char student[], char route_in_students[], char final_route[] ) 
+void assemble_route(char student[], char route_in_students[], char final_route[])
 {
     strcat(final_route, "/home/");
     strcat(final_route, student);
@@ -42,11 +44,10 @@ void assemble_route(char student[], char route_in_students[], char final_route[]
     strcat(final_route, route_in_students);
 }
 
-int copy_to_students(char route[], char route_to_file[]) 
+int copy_to_students(char route[], char route_to_file[])
 {
     char cmd[256] = "cp ";
     char out[512] = "";
-
 
     strcat(cmd, route_to_file);
     strcat(cmd, " ");
@@ -72,7 +73,7 @@ void assign_permissions(char route[], char filename[], char user[], char user_gr
     char cmd[256] = "chown ";
     char cmd_perm[256] = "chmod 700 ";
     char out[512] = "";
-    
+
     if (route[strlen(route) - 1] != '/')
         strcat(route, "/");
     strcat(route, filename);
@@ -86,7 +87,7 @@ void assign_permissions(char route[], char filename[], char user[], char user_gr
     printf("%s\n", cmd);
 
     strcat(cmd_perm, route);
-    printf("%s\n", cmd_perm);   
+    printf("%s\n", cmd_perm);
 
     fp = popen(cmd, "r");
     fscanf(fp, "%s", out);
