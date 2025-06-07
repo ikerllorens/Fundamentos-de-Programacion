@@ -2,6 +2,38 @@
 
 Esta carpeta contiene los ejemplos fundamentales para aprender programación en lenguaje C. Cada archivo está diseñado para enseñar conceptos específicos de manera práctica y con comentarios detallados.
 
+## 🔧 ¿Qué es un Compilador?
+
+Antes de empezar con los ejemplos, es importante entender qué es un **compilador** y por qué lo necesitamos:
+
+### Definición
+Un **compilador** es un programa que traduce código fuente escrito en un lenguaje de programación (como C) a código máquina que el procesador puede ejecutar directamente.
+
+### ¿Por qué necesitamos un compilador?
+- **Los procesadores no entienden C**: Solo entienden instrucciones en código máquina (0s y 1s)
+- **Traducción necesaria**: El compilador convierte nuestro código legible en instrucciones que la máquina puede ejecutar
+- **Verificación de errores**: Durante la compilación, el compilador detecta errores de sintaxis y algunos errores lógicos
+
+### El proceso de compilación en C:
+1. **Código fuente** (archivo `.c`) → Escribes tu programa
+2. **Compilador** (`gcc`) → Traduce el código
+3. **Archivo ejecutable** → Programa que puedes ejecutar
+
+### Ejemplo práctico:
+```bash
+# Tienes un archivo: programa.c
+# Compilas con: gcc -o programa programa.c
+# Ejecutas con: ./programa
+```
+
+### GCC - Nuestro Compilador
+En estos ejemplos usamos **GCC** (GNU Compiler Collection):
+- Es gratuito y ampliamente utilizado
+- Viene incluido en la mayoría de sistemas Linux/Mac
+- Para Windows, se puede instalar a través de MinGW o similar
+
+**Recuerda**: Sin compilador, tu código C es solo texto. ¡El compilador lo convierte en un programa funcional!
+
 ## 📚 Contenido de los Ejemplos
 
 ### 1. EstructuraBasicaPrograma.c
