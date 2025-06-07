@@ -23,7 +23,7 @@ int main(void)
 	*/
 	
 	// Lo que hacemos aquí es especificar una cadena de caracteres y con el %d especificamos el lugar donde queremos
-	// imprimir el valor de la variable. scanf siempre recibe una cadena como primer argmento, y puede recibir n argumentos
+	// imprimir el valor de la variable. printf siempre recibe una cadena como primer argmento, y puede recibir n argumentos
 	// adicionales dependiendo la cantidad de marcadores (en este caso %d) haya en la cadena enviada como primer 
 	// argumento.
 	printf("El valor de la variable UnEntero es: %d\n", UnEntero);
