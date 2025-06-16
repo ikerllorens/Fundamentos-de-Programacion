@@ -17,7 +17,7 @@ El objetivo de este repositorio es proporcionar una colección organizada de eje
 
 ### Orden del temario
 
-1) **BASICS** - Conceptos fundamentales
+1) **Fundamentos** - Conceptos fundamentales
 2) **IO** - Entrada y salida de datos
 3) **ARRAYS** - Arreglos y manejo de datos
 4) **POINTERS** - Punteros y referencias
@@ -28,7 +28,7 @@ El objetivo de este repositorio es proporcionar una colección organizada de eje
 
 ### Descripción de cada sección
 
-#### 📖 BASICS
+#### 📖 Fundamentos
 Conceptos fundamentales de programación en C:
 - Estructura básica de un programa
 - Tipos de datos (enteros, caracteres, flotantes)
@@ -81,10 +81,10 @@ Ejercicios prácticos para reforzar el aprendizaje:
 ### Pasos para comenzar
 
 1. **Clona o descarga** este repositorio en tu computadora
-2. **Comienza con BASICS**: Explora los archivos en la carpeta `BASICS/` para entender la estructura básica
+2. **Comienza con Fundamentos**: Explora los archivos en la carpeta `Fundamentos/` para entender la estructura básica
 3. **Compila tu primer programa**:
    ```bash
-   gcc -o mi_programa BASICS/EstructuraBasicaPrograma.c
+   gcc -o mi_programa Fundamentos/EstructuraBasicaPrograma.c
    ./mi_programa
    ```
 4. **Sigue el orden sugerido** del temario para un aprendizaje progresivo
