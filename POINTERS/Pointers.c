@@ -1,8 +1,21 @@
+/**
+ * @file Pointers.c
+ * @brief Programa que ejemplifica el uso básico de punteros en C
+ * @author Iker Llorens
+ * 
+ * Este programa demuestra la declaración, inicialización y uso de punteros,
+ * incluyendo cómo obtener direcciones de memoria y acceder a valores apuntados.
+ */
+
 #include <stdio.h>
 
 /**
- * Programa que ejemplifica el uso de punteros, con documentación sbre el uso básico al igul que el
- * @return
+ * @brief Función principal del programa
+ * 
+ * Demuestra el uso de punteros: declaración, asignación de direcciones,
+ * acceso a valores y comparación de punteros.
+ * 
+ * @return 0 si el programa se ejecutó correctamente
  */
 int main(void)
 {

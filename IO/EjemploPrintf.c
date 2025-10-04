@@ -1,9 +1,22 @@
-/*
- *
- *
+/**
+ * @file EjemploPrintf.c
+ * @brief Ejemplos de uso de la función printf para imprimir diferentes tipos de datos
+ * @author Iker Llorens
+ * 
+ * Este programa demuestra el uso de printf para imprimir enteros, caracteres,
+ * flotantes y cadenas, explicando los especificadores de formato.
  */
+
 #include <stdio.h>
 
+/**
+ * @brief Función principal del programa
+ * 
+ * Demuestra diferentes usos de printf con varios tipos de datos y
+ * especificadores de formato (%d, %c, %f, %s, etc.).
+ * 
+ * @return 0 si el programa se ejecutó correctamente
+ */
 int main(void)
 {
 	int UnEntero = 13;

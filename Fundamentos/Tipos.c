@@ -1,6 +1,22 @@
+/**
+ * @file Tipos.c
+ * @brief Programa que ejemplifica los diferentes tipos de datos en C
+ * @author Iker Llorens
+ * 
+ * Este programa demuestra la declaración y uso de diferentes tipos de datos
+ * en C: enteros, caracteres, arreglos, punteros y tipos personalizados.
+ */
+
 #include <stdio.h>
 
-
+/**
+ * @brief Función principal del programa
+ * 
+ * Declara variables de diferentes tipos para demostrar la variedad
+ * de tipos de datos disponibles en C y su uso en memoria.
+ * 
+ * @return 0 si el programa se ejecutó correctamente
+ */
 int main(void)
 {
 	// Void es una palabra reservada, que se puede considerar un "tipo" algunas veces ya que al escribir funciones

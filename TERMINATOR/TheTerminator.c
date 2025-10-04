@@ -1,3 +1,12 @@
+/**
+ * @file TheTerminator.c
+ * @brief Herramienta para recolectar y copiar archivos de estudiantes
+ * @author Iker Llorens
+ * 
+ * Este programa busca archivos específicos en los directorios de estudiantes,
+ * los copia a un directorio local y los prepara para evaluación.
+ */
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -6,6 +15,16 @@ int is_file_in_directory(char file[], char student[]);
 int copy_file(char file[], char student[], char local_dir_name[]);
 int build_students_program(char directory[], char student[]);
 
+/**
+ * @brief Función principal del programa
+ * 
+ * Procesa una lista de estudiantes, busca archivos específicos en sus
+ * directorios y los copia a un directorio local.
+ * 
+ * @param argc Número de argumentos de línea de comandos
+ * @param argv Arreglo de argumentos: [1] lista de alumnos, [2] ruta del archivo, [3] nombre local
+ * @return 0 si el programa se ejecutó correctamente
+ */
 int main(int argc, char *argv[])
 {
     FILE *fp;
@@ -77,6 +96,17 @@ int is_file_in_directory(char file[], char student[])
     return 1;
 }
 
+/**
+ * @brief Copia un archivo del directorio del estudiante al directorio local
+ * 
+ * Construye el comando de copia y ejecuta la operación, reportando
+ * cualquier error que ocurra durante el proceso.
+ * 
+ * @param file Nombre del archivo a copiar
+ * @param student Nombre de usuario del estudiante
+ * @param local_dir_name Nombre del directorio local de destino
+ * @return 0 si la copia fue exitosa, longitud del mensaje de error si falló
+ */
 int copy_file(char file[], char student[], char local_dir_name[])
 {
     char cmd[256] = "cp /home/";
@@ -108,6 +138,16 @@ int copy_file(char file[], char student[], char local_dir_name[])
     return strlen(out);
 }
 
+/**
+ * @brief Compila el programa de un estudiante
+ * 
+ * Construye y ejecuta el comando gcc para compilar el programa del estudiante,
+ * reportando cualquier error de compilación.
+ * 
+ * @param directory Ruta del archivo a compilar
+ * @param student Nombre de usuario del estudiante
+ * @return 0 si la compilación fue exitosa, longitud del mensaje de error si falló
+ */
 int build_students_program(char directory[], char student[])
 {
     char out[256] = "";

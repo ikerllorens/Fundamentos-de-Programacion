@@ -1,5 +1,25 @@
+/**
+ * @file direcciones_memoria.c
+ * @brief Programa que demuestra direcciones de memoria y paso por valor vs referencia
+ * @author Iker Llorens
+ * 
+ * Este programa muestra cómo las variables ocupan direcciones de memoria
+ * y la diferencia entre pasar parámetros por valor y por referencia.
+ */
+
 #include <stdio.h>
 
+int Param_Referencia(int* p1, int* n2, int n1);
+int Param_Valor(int n1, int n2);
+
+/**
+ * @brief Función principal del programa
+ * 
+ * Solicita dos números al usuario y demuestra la diferencia entre
+ * paso por valor y paso por referencia, mostrando direcciones de memoria.
+ * 
+ * @return 0 si el programa se ejecutó correctamente
+ */
 int main(void) 
 {
     int n1;
@@ -27,6 +47,17 @@ int main(void)
     printf ("main: La dirección de resultado en main es %p, contiene el valor %d\n", &resultado, resultado);
 }
 
+/**
+ * @brief Función que recibe parámetros por referencia (punteros)
+ * 
+ * Demuestra cómo modificar valores externos usando punteros.
+ * Muestra las direcciones de memoria de los parámetros.
+ * 
+ * @param p1 Puntero al primer entero (por referencia)
+ * @param n2 Puntero al segundo entero (por referencia)
+ * @param n1 Tercer entero (por valor)
+ * @return El cuadrado de n2
+ */
 int Param_Referencia(int* p1, int* n2, int n1) 
 {
     int resultado;
@@ -43,6 +74,16 @@ int Param_Referencia(int* p1, int* n2, int n1)
     return resultado;
 }
 
+/**
+ * @brief Función que recibe parámetros por valor
+ * 
+ * Demuestra que modificar parámetros por valor no afecta las variables
+ * originales. Muestra las direcciones de memoria locales.
+ * 
+ * @param n1 Primer entero (copia local)
+ * @param n2 Segundo entero (copia local)
+ * @return La suma de n1 y n2
+ */
 int Param_Valor(int n1, int n2) 
 {
     int resultado = 0;

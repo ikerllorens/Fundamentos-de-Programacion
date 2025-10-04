@@ -1,16 +1,29 @@
+/**
+ * @file simon_dice.c
+ * @brief Juego de memoria "Simon Dice"
+ * @author Iker Llorens
+ * 
+ * Este programa implementa un juego de memoria donde el jugador debe
+ * recordar y repetir secuencias de números cada vez más largas.
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 
-// Primera vez que vemos define
-#define MAXIMO 100
-
-// Revisar después este truco
-#define TURNOS 20
+#define MAXIMO 100  /**< Valor máximo para los números aleatorios */
+#define TURNOS 20   /**< Número de turnos/rondas del juego */
 
 void LeerNumeros(int arregloALeer[]);
 void GenerarNumeros(int arregloALlenar[]);
 int SimonDice(int arregloDeJuego[]);
 
+/**
+ * @brief Función principal del programa
+ * 
+ * Genera una secuencia de números aleatorios e inicia el juego Simon Dice.
+ * 
+ * @return 0 si el programa se ejecutó correctamente
+ */
 int main(void)
 {
     int numeros[TURNOS];
@@ -28,6 +41,13 @@ int main(void)
     return 0;
 }
 
+/**
+ * @brief Lee números ingresados por el usuario
+ * 
+ * Solicita al usuario que ingrese TURNOS números y los almacena en el arreglo.
+ * 
+ * @param arregloALeer Arreglo donde se almacenarán los números ingresados
+ */
 void LeerNumeros(int arregloALeer[])
 {
     int i;
@@ -39,6 +59,14 @@ void LeerNumeros(int arregloALeer[])
     return;
 }
 
+/**
+ * @brief Genera una secuencia de números aleatorios
+ * 
+ * Solicita una semilla al usuario y genera TURNOS números aleatorios
+ * entre 0 y MAXIMO, almacenándolos en el arreglo proporcionado.
+ * 
+ * @param arregloALlenar Arreglo donde se almacenarán los números generados
+ */
 void GenerarNumeros(int arregloALlenar[])
 {
     int i;
@@ -54,6 +82,16 @@ void GenerarNumeros(int arregloALlenar[])
     }
 }
 
+/**
+ * @brief Ejecuta la lógica principal del juego Simon Dice
+ * 
+ * Muestra secuencias de números cada vez más largas y solicita al jugador
+ * que las repita. El juego termina cuando el jugador comete un error o
+ * completa todos los turnos exitosamente.
+ * 
+ * @param arregloDeJuego Arreglo con la secuencia de números del juego
+ * @return 1 si el jugador ganó, 0 si perdió
+ */
 int SimonDice(int arregloDeJuego[])
 {
     int i;
