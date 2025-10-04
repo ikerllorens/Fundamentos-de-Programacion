@@ -4,3 +4,6 @@
 Lista.txt
 
 .vscode/*
+
+# Doxygen generated documentation
+docs/
