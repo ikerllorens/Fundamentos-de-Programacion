@@ -23,3 +23,11 @@ int resta(int a, int b);
  * @return La suma de a + b + c
  */
 int suma(int a, int b, int c);
+
+/**
+ * <brief>Multiplica dos números enteros (Ejemplo con formato XML)</brief>
+ * <param name="a">Primer número a multiplicar</param>
+ * <param name="b">Segundo número a multiplicar</param>
+ * <return>El producto de a * b</return>
+ */
+int multiplicar(int a, int b);

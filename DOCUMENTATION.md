@@ -31,7 +31,7 @@ brew install doxygen graphviz
 **Windows:**
 Descargar desde [doxygen.nl](https://www.doxygen.nl/download.html)
 
-### Generar HTML
+### Generar Documentación
 
 Desde el directorio raíz del proyecto:
 
@@ -39,7 +39,15 @@ Desde el directorio raíz del proyecto:
 doxygen Doxyfile
 ```
 
-Esto generará la documentación en el directorio `docs/html/`. Abre `docs/html/index.html` en tu navegador.
+Esto generará la documentación en dos formatos:
+- **HTML**: `docs/html/index.html` - Abre este archivo en tu navegador para documentación interactiva
+- **XML**: `docs/xml/` - Archivos XML estructurados que pueden ser procesados por otras herramientas
+
+### Formatos de Salida Disponibles
+
+El archivo `Doxyfile` está configurado para generar:
+1. **HTML** - Documentación navegable en el navegador web
+2. **XML** - Formato estructurado para integración con otras herramientas (IDEs, sistemas de documentación, etc.)
 
 ## 📂 Archivos Documentados
 
@@ -70,6 +78,7 @@ Esto generará la documentación en el directorio `docs/html/`. Abre `docs/html/
 - ✅ `suma.c` - Función de suma
 - ✅ `resta.c` - Función de resta
 - ✅ `biblioteca.h` - Declaraciones de funciones
+- ✅ `ejemplo_xml_doc.c` - Ejemplo de documentación con formato XML
 
 ### EJERCICIOS/
 - ✅ `Circulo.c` - Cálculos de círculo y esfera
@@ -83,15 +92,27 @@ Esto generará la documentación en el directorio `docs/html/`. Abre `docs/html/
 
 ## 📋 Etiquetas Doxygen Utilizadas
 
+Doxygen soporta dos formatos de etiquetas:
+
+### Formato con @ (Usado actualmente)
 - `@file` - Nombre del archivo
 - `@brief` - Descripción breve
 - `@author` - Autor del código
 - `@param` - Descripción de parámetros
 - `@return` - Descripción del valor de retorno
 
+### Formato XML (Alternativo)
+- `<file>` en lugar de `@file`
+- `<brief>` en lugar de `@brief`
+- `<author>` en lugar de `@author`
+- `<param>` en lugar de `@param`
+- `<return>` en lugar de `@return`
+
+Ambos formatos son equivalentes y pueden ser mezclados en el mismo proyecto.
+
 ## 🎓 Ejemplos de Documentación
 
-### Ejemplo de documentación de archivo:
+### Ejemplo de documentación de archivo (Formato @):
 ```c
 /**
  * @file ejemplo.c
@@ -103,7 +124,19 @@ Esto generará la documentación en el directorio `docs/html/`. Abre `docs/html/
  */
 ```
 
-### Ejemplo de documentación de función:
+### Ejemplo de documentación de archivo (Formato XML):
+```c
+/**
+ * <file>ejemplo.c</file>
+ * <brief>Descripción breve del archivo</brief>
+ * <author>Iker Llorens</author>
+ * 
+ * Descripción detallada del propósito del archivo
+ * y su funcionalidad.
+ */
+```
+
+### Ejemplo de documentación de función (Formato @):
 ```c
 /**
  * @brief Suma dos números enteros
@@ -120,6 +153,26 @@ int suma(int a, int b)
     return a + b;
 }
 ```
+
+### Ejemplo de documentación de función (Formato XML):
+```c
+/**
+ * <brief>Suma dos números enteros</brief>
+ * 
+ * Esta función toma dos números enteros como entrada
+ * y devuelve su suma.
+ * 
+ * <param name="a">Primer número a sumar</param>
+ * <param name="b">Segundo número a sumar</param>
+ * <return>La suma de a y b</return>
+ */
+int suma(int a, int b)
+{
+    return a + b;
+}
+```
+
+**Nota**: Ambos formatos son válidos y generan la misma documentación. El formato @ es más común en proyectos C/C++, mientras que el formato XML puede ser preferido por desarrolladores familiarizados con XML.
 
 ## 📚 Referencias
 
