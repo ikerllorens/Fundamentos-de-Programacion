@@ -76,9 +76,9 @@ int main(void)
  * Es importante notar que la definición de la función es exactamente igual a como
  * fue declarada al principio de la función.
  * 
- * @param int parametro1 Numero a sumar
- * @param int parametro2 El segundo número a sumar
- * @return Entero que representa la suma de los dos valore enviados a la función
+ * <param name="int">parametro1 Numero a sumar</param>
+ * <param name="int">parametro2 El segundo número a sumar</param>
+ * <return>Entero que representa la suma de los dos valore enviados a la función</return>
  */
 int Suma(int parametro1, int parametro2)
 {
@@ -99,9 +99,9 @@ int Suma(int parametro1, int parametro2)
  * Es importante recalcar que parametro1 tiene el miso nombre aquí y en la función Suma, pero son
  * variables diferentes que no tienen nada que ver entre sí, ya que únicamente existen dentro de la
  * ejecución de la función
- * @param int parametro1 Valor del que se va a restar
- * @param int valorARestar Valor que queremos restar a parametro1
- * @return La resta parametro1 - valorARestar
+ * <param name="int">parametro1 Valor del que se va a restar</param>
+ * <param name="int">valorARestar Valor que queremos restar a parametro1</param>
+ * <return>La resta parametro1 - valorARestar</return>
  */
 int Resta(int parametro1, int valorARestar)
 {

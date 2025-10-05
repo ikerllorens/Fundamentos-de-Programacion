@@ -38,13 +38,13 @@ int main(void)
 /**
  * Descripción del funcionamiento de la función. Es importante hacer que quien lea nuestro código
  * pueda entender la funcionalidad de la función con esta descripción sin tener que descifrar el código
- * @param int parametro Descripción del parametro que la función recibe
- * @return Describir el valor de regreso. DEscribir también casos especiales (TODOS los posibles resultados)
+ * <param name="int">parametro Descripción del parametro que la función recibe</param>
+ * <return>Describir el valor de regreso. DEscribir también casos especiales (TODOS los posibles resultados)</return>
 
  * Calculates the square of two integers.
- * @param p The first integer.
+ * <param name="p">The first integer.</param>
  *
- * @return The square of a and b.
+ * <return>The square of a and b.</return>
  *
  * @example
  * int result = Cuadrado(2);
@@ -57,10 +57,10 @@ int Cuadrado(int p)
 
 /**
  * Calculates the sum of two integers.
- * @param a The first integer.
- * @param b The second integer.
+ * <param name="a">The first integer.</param>
+ * <param name="b">The second integer.</param>
  *
- * @return The sum of a and b.
+ * <return>The sum of a and b.</return>
  *
  * @example
  * int result = Suma(2, 3);

@@ -1,16 +1,16 @@
 /**
- * @file suma.c
- * @brief Implementación de la función suma
- * @author Iker Llorens
+ * <file>suma.c</file>
+ * <brief>Implementación de la función suma</brief>
+ * <author>Iker Llorens</author>
  */
 
 /**
- * @brief Suma tres números enteros
+ * <brief>Suma tres números enteros</brief>
  * 
- * @param a Primer número a sumar
- * @param b Segundo número a sumar
- * @param c Tercer número a sumar
- * @return La suma de a + b + c
+ * <param name="a">Primer número a sumar</param>
+ * <param name="b">Segundo número a sumar</param>
+ * <param name="c">Tercer número a sumar</param>
+ * <return>La suma de a + b + c</return>
  */
 int suma(int a, int b, int c)
 {

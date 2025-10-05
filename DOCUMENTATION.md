@@ -92,37 +92,19 @@ El archivo `Doxyfile` está configurado para generar:
 
 ## 📋 Etiquetas Doxygen Utilizadas
 
-Doxygen soporta dos formatos de etiquetas:
+Este repositorio utiliza el formato XML para la documentación Doxygen:
 
-### Formato con @ (Usado actualmente)
-- `@file` - Nombre del archivo
-- `@brief` - Descripción breve
-- `@author` - Autor del código
-- `@param` - Descripción de parámetros
-- `@return` - Descripción del valor de retorno
+### Formato XML (Usado en el repositorio)
+- `<file>...</file>` - Nombre del archivo
+- `<brief>...</brief>` - Descripción breve
+- `<author>...</author>` - Autor del código
+- `<param name="nombre">...</param>` - Descripción de parámetros
+- `<return>...</return>` - Descripción del valor de retorno
 
-### Formato XML (Alternativo)
-- `<file>` en lugar de `@file`
-- `<brief>` en lugar de `@brief`
-- `<author>` en lugar de `@author`
-- `<param>` en lugar de `@param`
-- `<return>` en lugar de `@return`
-
-Ambos formatos son equivalentes y pueden ser mezclados en el mismo proyecto.
+### Formato @ (Alternativo)
+Doxygen también soporta el formato con @ (por ejemplo: `@file`, `@brief`, `@param`, `@return`), pero este repositorio usa consistentemente el formato XML para mantener uniformidad.
 
 ## 🎓 Ejemplos de Documentación
-
-### Ejemplo de documentación de archivo (Formato @):
-```c
-/**
- * @file ejemplo.c
- * @brief Descripción breve del archivo
- * @author Iker Llorens
- * 
- * Descripción detallada del propósito del archivo
- * y su funcionalidad.
- */
-```
 
 ### Ejemplo de documentación de archivo (Formato XML):
 ```c
@@ -134,24 +116,6 @@ Ambos formatos son equivalentes y pueden ser mezclados en el mismo proyecto.
  * Descripción detallada del propósito del archivo
  * y su funcionalidad.
  */
-```
-
-### Ejemplo de documentación de función (Formato @):
-```c
-/**
- * @brief Suma dos números enteros
- * 
- * Esta función toma dos números enteros como entrada
- * y devuelve su suma.
- * 
- * @param a Primer número a sumar
- * @param b Segundo número a sumar
- * @return La suma de a y b
- */
-int suma(int a, int b)
-{
-    return a + b;
-}
 ```
 
 ### Ejemplo de documentación de función (Formato XML):
@@ -172,7 +136,7 @@ int suma(int a, int b)
 }
 ```
 
-**Nota**: Ambos formatos son válidos y generan la misma documentación. El formato @ es más común en proyectos C/C++, mientras que el formato XML puede ser preferido por desarrolladores familiarizados con XML.
+**Nota**: Todo el código en este repositorio utiliza consistentemente el formato XML de Doxygen. El formato XML proporciona una estructura clara y es familiar para desarrolladores con experiencia en XML.
 
 ## 📚 Referencias
 

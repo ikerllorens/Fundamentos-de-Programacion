@@ -1,7 +1,7 @@
 /**
- * @file Pointers.c
- * @brief Programa que ejemplifica el uso básico de punteros en C
- * @author Iker Llorens
+ * <file>Pointers.c</file>
+ * <brief>Programa que ejemplifica el uso básico de punteros en C</brief>
+ * <author>Iker Llorens</author>
  * 
  * Este programa demuestra la declaración, inicialización y uso de punteros,
  * incluyendo cómo obtener direcciones de memoria y acceder a valores apuntados.
@@ -10,12 +10,12 @@
 #include <stdio.h>
 
 /**
- * @brief Función principal del programa
+ * <brief>Función principal del programa</brief>
  * 
  * Demuestra el uso de punteros: declaración, asignación de direcciones,
  * acceso a valores y comparación de punteros.
  * 
- * @return 0 si el programa se ejecutó correctamente
+ * <return>0 si el programa se ejecutó correctamente</return>
  */
 int main(void)
 {

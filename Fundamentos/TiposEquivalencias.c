@@ -1,7 +1,7 @@
 /**
- * @file TiposEquivalencias.c
- * @brief Programa que ejemplifica las equivalencias del tipo char
- * @author Iker Llorens
+ * <file>TiposEquivalencias.c</file>
+ * <brief>Programa que ejemplifica las equivalencias del tipo char</brief>
+ * <author>Iker Llorens</author>
  * 
  * Este programa demuestra cómo los caracteres pueden ser tratados como
  * números y las equivalencias entre valores ASCII, decimales y hexadecimales.
@@ -10,12 +10,12 @@
 #include <stdio.h>
 
 /**
- * @brief Función principal del programa
+ * <brief>Función principal del programa</brief>
  * 
  * Demuestra operaciones aritméticas con caracteres y conversiones
  * entre representaciones decimal, hexadecimal y ASCII.
  * 
- * @return 0 si el programa se ejecutó correctamente
+ * <return>0 si el programa se ejecutó correctamente</return>
  */
 int main(void)
 {

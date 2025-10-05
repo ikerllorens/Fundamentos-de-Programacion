@@ -1,7 +1,7 @@
 /**
- * @file IfExample.c
- * @brief Programa que ejemplifica el uso de la sentencia if
- * @author Iker Llorens
+ * <file>IfExample.c</file>
+ * <brief>Programa que ejemplifica el uso de la sentencia if</brief>
+ * <author>Iker Llorens</author>
  * 
  * Este programa demuestra varios usos de la sentencia if y cómo modifica
  * el flujo del programa. Se recomienda modificar los valores de las variables,
@@ -11,12 +11,12 @@
 #include <stdio.h>
 
 /**
- * @brief Función principal del programa
+ * <brief>Función principal del programa</brief>
  * 
  * Demuestra diferentes usos de la sentencia if: condiciones simples,
  * operadores de comparación, operadores lógicos y validación de entrada.
  * 
- * @return 0 si el programa se ejecutó correctamente
+ * <return>0 si el programa se ejecutó correctamente</return>
  */
 int main(void)
 {

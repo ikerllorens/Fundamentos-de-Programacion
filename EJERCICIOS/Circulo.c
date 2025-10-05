@@ -1,7 +1,7 @@
 /**
- * @file Circulo.c
- * @brief Programa que calcula el radio, perímetro, área y volumen de un círculo/esfera
- * @author Iker Llorens
+ * <file>Circulo.c</file>
+ * <brief>Programa que calcula el radio, perímetro, área y volumen de un círculo/esfera</brief>
+ * <author>Iker Llorens</author>
  * 
  * Este programa solicita al usuario el diámetro de un círculo y calcula:
  * - Radio
@@ -13,12 +13,12 @@
 #include <stdio.h>
 
 /**
- * @brief Función principal del programa
+ * <brief>Función principal del programa</brief>
  * 
  * Solicita al usuario el diámetro de un círculo y calcula el radio,
  * perímetro, área y volumen. Muestra todos los resultados en pantalla.
  * 
- * @return 0 si el programa se ejecutó correctamente
+ * <return>0 si el programa se ejecutó correctamente</return>
  */
 int main(void)
 {

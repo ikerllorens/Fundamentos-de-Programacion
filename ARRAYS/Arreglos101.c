@@ -1,7 +1,7 @@
 /**
- * @file Arreglos101.c
- * @brief Introducción básica al uso de arreglos en C
- * @author Iker Llorens
+ * <file>Arreglos101.c</file>
+ * <brief>Introducción básica al uso de arreglos en C</brief>
+ * <author>Iker Llorens</author>
  * 
  * Este programa demuestra los conceptos fundamentales de arreglos:
  * declaración, inicialización, acceso a elementos e iteración.
@@ -10,12 +10,12 @@
 #include <stdio.h>
 
 /**
- * @brief Función principal del programa
+ * <brief>Función principal del programa</brief>
  * 
  * Demuestra el uso básico de arreglos: inicialización, acceso a elementos
  * y uso de ciclos para recorrer y modificar valores del arreglo.
  * 
- * @return 0 si el programa se ejecutó correctamente
+ * <return>0 si el programa se ejecutó correctamente</return>
  */
 int main(void)
 {

@@ -1,7 +1,7 @@
 /**
- * @file Abecedario.c
- * @brief Programa que imprime el abecedario en mayúsculas o minúsculas
- * @author Iker Llorens
+ * <file>Abecedario.c</file>
+ * <brief>Programa que imprime el abecedario en mayúsculas o minúsculas</brief>
+ * <author>Iker Llorens</author>
  * 
  * Este programa solicita al usuario si desea ver el abecedario en
  * mayúsculas o minúsculas e imprime la secuencia correspondiente.
@@ -15,11 +15,11 @@ void c(char Mayuscula);
 char d(void);
 
 /**
- * @brief Función principal del programa
+ * <brief>Función principal del programa</brief>
  * 
  * Solicita al usuario su elección y muestra el abecedario correspondiente.
  * 
- * @return 0 si el programa se ejecutó correctamente
+ * <return>0 si el programa se ejecutó correctamente</return>
  */
 int main(void)
 {
@@ -36,7 +36,7 @@ int main(void)
 }
 
 /**
- * @brief Imprime el abecedario en mayúsculas
+ * <brief>Imprime el abecedario en mayúsculas</brief>
  * 
  * Imprime todas las letras del alfabeto desde A hasta Z,
  * cada una en una línea separada.
@@ -51,7 +51,7 @@ void a(void)
 }
 
 /**
- * @brief Imprime el abecedario en minúsculas
+ * <brief>Imprime el abecedario en minúsculas</brief>
  * 
  * Imprime todas las letras del alfabeto desde a hasta z,
  * cada una en una línea separada.
@@ -66,12 +66,12 @@ void b(void)
 }
 
 /**
- * @brief Selecciona e imprime el abecedario según la opción
+ * <brief>Selecciona e imprime el abecedario según la opción</brief>
  * 
  * Llama a la función a() si la opción es 'M' (mayúsculas)
  * o a la función b() si la opción es 'm' (minúsculas).
  * 
- * @param opcion Carácter que indica mayúsculas ('M') o minúsculas ('m')
+ * <param name="opcion">Carácter que indica mayúsculas ('M') o minúsculas ('m')</param>
  */
 void c(char opcion)
 {
@@ -86,12 +86,12 @@ void c(char opcion)
 }
 
 /**
- * @brief Lee la opción del usuario para el tipo de abecedario
+ * <brief>Lee la opción del usuario para el tipo de abecedario</brief>
  * 
  * Solicita al usuario que ingrese 'M' para mayúsculas o 'm' para minúsculas.
  * Si el usuario ingresa un valor inválido, retorna '\0'.
  * 
- * @return 'M' para mayúsculas, 'm' para minúsculas, '\0' si es inválido
+ * <return>'M' para mayúsculas, 'm' para minúsculas, '\0' si es inválido</return>
  */
 char d(void)
 {

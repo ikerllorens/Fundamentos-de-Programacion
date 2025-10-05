@@ -1,7 +1,7 @@
 /**
- * @file abecedario_bad.c
- * @brief Ejemplo de código con malas prácticas de programación
- * @author Iker Llorens
+ * <file>abecedario_bad.c</file>
+ * <brief>Ejemplo de código con malas prácticas de programación</brief>
+ * <author>Iker Llorens</author>
  * 
  * Este programa contiene intencionalmente errores y malas prácticas
  * para propósitos educativos. Imprime el abecedario con errores.
@@ -17,12 +17,12 @@ void c(char aVar);
 char d(void);
 
 /**
- * @brief Función principal del programa
+ * <brief>Función principal del programa</brief>
  * 
  * Solicita entrada del usuario e intenta imprimir el abecedario.
  * Contiene errores intencionados para propósitos educativos.
  * 
- * @return 0 si el programa se ejecutó correctamente
+ * <return>0 si el programa se ejecutó correctamente</return>
  */
 int main(void)
 {
@@ -38,7 +38,7 @@ int main(void)
 }
 
 /**
- * @brief Intenta imprimir el abecedario en mayúsculas (CON ERROR)
+ * <brief>Intenta imprimir el abecedario en mayúsculas (CON ERROR)</brief>
  * 
  * NOTA: Esta función contiene un error intencional - el punto y coma
  * después del for hace que solo imprima la última letra.
@@ -53,7 +53,7 @@ void a(void)
 }
 
 /**
- * @brief Imprime el abecedario en minúsculas
+ * <brief>Imprime el abecedario en minúsculas</brief>
  * 
  * Imprime todas las letras del alfabeto desde a hasta z,
  * cada una en una línea separada.
@@ -68,12 +68,12 @@ void b(void)
 }
 
 /**
- * @brief Determina qué función llamar según el carácter
+ * <brief>Determina qué función llamar según el carácter</brief>
  * 
  * Llama a la función a() si aVar es 'M' (mayúsculas)
  * o a la función b() si aVar es 'm' (minúsculas).
  * 
- * @param aVar Carácter que indica mayúsculas ('M') o minúsculas ('m')
+ * <param name="aVar">Carácter que indica mayúsculas ('M') o minúsculas ('m')</param>
  */
 void c(char aVar)
 {
@@ -88,11 +88,11 @@ void c(char aVar)
 }
 
 /**
- * @brief Lee la entrada del usuario
+ * <brief>Lee la entrada del usuario</brief>
  * 
  * Solicita al usuario que ingrese 'M' para mayúsculas o 'm' para minúsculas.
  * 
- * @return El carácter ingresado o '\0' si es inválido
+ * <return>El carácter ingresado o '\0' si es inválido</return>
  */
 char d(void)
 {

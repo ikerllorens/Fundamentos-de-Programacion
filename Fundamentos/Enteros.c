@@ -1,7 +1,7 @@
 /**
- * @file Enteros.c
- * @brief Programa que ejemplifica los límites de un entero en ANSI C
- * @author Iker Llorens
+ * <file>Enteros.c</file>
+ * <brief>Programa que ejemplifica los límites de un entero en ANSI C</brief>
+ * <author>Iker Llorens</author>
  * 
  * Este programa demuestra qué sucede cuando un entero alcanza su límite
  * máximo y experimenta overflow (desbordamiento).
@@ -10,12 +10,12 @@
 #include <stdio.h>
 
 /**
- * @brief Función principal del programa
+ * <brief>Función principal del programa</brief>
  * 
  * Incrementa un entero en un ciclo hasta que experimenta overflow
  * y se vuelve negativo, demostrando los límites del tipo int.
  * 
- * @return 0 si el programa se ejecutó correctamente
+ * <return>0 si el programa se ejecutó correctamente</return>
  */
 int main(void)
 {

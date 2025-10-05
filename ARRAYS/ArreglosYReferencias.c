@@ -1,7 +1,7 @@
 /**
- * @file ArreglosYReferencias.c
- * @brief Programa que demuestra la relación entre arreglos y punteros
- * @author Iker Llorens
+ * <file>ArreglosYReferencias.c</file>
+ * <brief>Programa que demuestra la relación entre arreglos y punteros</brief>
+ * <author>Iker Llorens</author>
  * 
  * Este programa ejemplifica cómo los arreglos son tratados como punteros
  * y cómo se puede usar un puntero para acceder a elementos de un arreglo.
@@ -12,12 +12,12 @@
 void LlenarArreglo();
 
 /**
- * @brief Función principal del programa
+ * <brief>Función principal del programa</brief>
  * 
  * Demuestra que un arreglo puede ser asignado a un puntero y que
  * ambos comparten la misma dirección de memoria.
  * 
- * @return 0 si el programa se ejecutó correctamente
+ * <return>0 si el programa se ejecutó correctamente</return>
  */
 int main(void)
 {

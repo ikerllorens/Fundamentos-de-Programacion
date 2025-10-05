@@ -1,15 +1,15 @@
 /**
- * @file resta.c
- * @brief Implementación de la función resta
- * @author Iker Llorens
+ * <file>resta.c</file>
+ * <brief>Implementación de la función resta</brief>
+ * <author>Iker Llorens</author>
  */
 
 /**
- * @brief Resta dos números enteros
+ * <brief>Resta dos números enteros</brief>
  * 
- * @param a Número del cual se restará
- * @param b Número a restar
- * @return La resta de a - b
+ * <param name="a">Número del cual se restará</param>
+ * <param name="b">Número a restar</param>
+ * <return>La resta de a - b</return>
  */
 int resta(int a, int b)
 {

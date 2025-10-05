@@ -1,7 +1,7 @@
 /**
- * @file main.c
- * @brief Programa principal que demuestra el uso de funciones en bibliotecas separadas
- * @author Iker Llorens
+ * <file>main.c</file>
+ * <brief>Programa principal que demuestra el uso de funciones en bibliotecas separadas</brief>
+ * <author>Iker Llorens</author>
  * 
  * Este programa utiliza funciones definidas en archivos separados
  * y compiladas mediante un Makefile.
@@ -11,12 +11,12 @@
 #include "biblioteca.h"
 
 /**
- * @brief Función principal del programa
+ * <brief>Función principal del programa</brief>
  * 
  * Llama a las funciones suma y resta definidas en archivos separados
  * y muestra los resultados.
  * 
- * @return 0 si el programa se ejecutó correctamente
+ * <return>0 si el programa se ejecutó correctamente</return>
  */
 int main(void)
 {
