@@ -1,0 +1,96 @@
+# Doxyfile for Fundamentos de Programación
+# Configuration file for Doxygen to generate documentation
+
+# Project information
+PROJECT_NAME           = "Fundamentos de Programación"
+PROJECT_BRIEF          = "Material educativo de programación en C"
+PROJECT_NUMBER         = 1.0
+PROJECT_LOGO           = 
+
+# Output options
+OUTPUT_DIRECTORY       = docs
+CREATE_SUBDIRS         = NO
+OUTPUT_LANGUAGE        = Spanish
+
+# Input files
+INPUT                  = . \
+                         Fundamentos \
+                         IO \
+                         ARRAYS \
+                         POINTERS \
+                         "PROGRAM FLOW" \
+                         MAKEFILE_EXAMPLE \
+                         EJERCICIOS \
+                         TERMINATOR
+
+FILE_PATTERNS          = *.c \
+                         *.h
+
+RECURSIVE              = YES
+EXCLUDE_PATTERNS       = */.*
+
+# Source browsing
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = NO
+STRIP_CODE_COMMENTS    = NO
+REFERENCED_BY_RELATION = YES
+REFERENCES_RELATION    = YES
+
+# HTML output
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+HTML_FILE_EXTENSION    = .html
+HTML_COLORSTYLE_HUE    = 220
+HTML_COLORSTYLE_SAT    = 100
+HTML_COLORSTYLE_GAMMA  = 80
+
+# XML output
+GENERATE_XML           = YES
+XML_OUTPUT             = xml
+XML_PROGRAMLISTING     = YES
+
+# LaTeX output
+GENERATE_LATEX         = NO
+
+# Extract options
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+EXTRACT_LOCAL_CLASSES  = YES
+
+# Documentation options
+JAVADOC_AUTOBRIEF      = YES
+MULTILINE_CPP_IS_BRIEF = NO
+BRIEF_MEMBER_DESC      = YES
+REPEAT_BRIEF           = YES
+ALWAYS_DETAILED_SEC    = NO
+INLINE_INHERITED_MEMB  = NO
+FULL_PATH_NAMES        = YES
+STRIP_FROM_PATH        = 
+SHORT_NAMES            = NO
+INHERIT_DOCS           = YES
+
+# Build related options
+CASE_SENSE_NAMES       = YES
+HIDE_SCOPE_NAMES       = NO
+SHOW_INCLUDE_FILES     = YES
+SORT_MEMBER_DOCS       = YES
+SORT_BRIEF_DOCS        = NO
+SORT_BY_SCOPE_NAME     = NO
+
+# Warning and progress related options
+QUIET                  = NO
+WARNINGS               = YES
+WARN_IF_UNDOCUMENTED   = YES
+WARN_IF_DOC_ERROR      = YES
+WARN_NO_PARAMDOC       = NO
+
+# Configuration options related to the dot tool
+HAVE_DOT               = NO
+CLASS_DIAGRAMS         = YES
+CALL_GRAPH             = NO
+CALLER_GRAPH           = NO
+
+# Other options
+OPTIMIZE_OUTPUT_FOR_C  = YES
+MARKDOWN_SUPPORT       = YES

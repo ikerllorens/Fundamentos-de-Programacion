@@ -1,9 +1,22 @@
+/**
+ * <file>IfExample.c</file>
+ * <brief>Programa que ejemplifica el uso de la sentencia if</brief>
+ * <author>Iker Llorens</author>
+ * 
+ * Este programa demuestra varios usos de la sentencia if y cómo modifica
+ * el flujo del programa. Se recomienda modificar los valores de las variables,
+ * introducir diferentes valores durante la ejecución y modificar las condiciones.
+ */
+
 #include <stdio.h>
 
-/* 
- * Programa que ejemplifica varios usos de la sentencia If y como modifica el flujo del programa. En este ejemplo se
- * se recomiendo modificar los valores de las variables del programa, introducir diferentes valores dentro de la
- * ejecución de este programa y modificar las condiciones del programa. 
+/**
+ * <brief>Función principal del programa</brief>
+ * 
+ * Demuestra diferentes usos de la sentencia if: condiciones simples,
+ * operadores de comparación, operadores lógicos y validación de entrada.
+ * 
+ * <return>0 si el programa se ejecutó correctamente</return>
  */
 int main(void)
 {
