@@ -62,44 +62,35 @@ int parse_arguments(int argc, char *argv[], char *user_list, char *dest_dir, cha
     strcpy(dest_dir, "");
     strcpy(source_dir, "");
 
-    for (i = 1; i < argc; i++)
-    {
-        if (strcmp(argv[i], "-h") == 0)
-        {
+    for (i = 1; i < argc; i++) {
+        if (strcmp(argv[i], "-h") == 0) {
             print_usage();
             return -1;
         }
-        else if (strcmp(argv[i], "-ul") == 0)
-        {
+        else if (strcmp(argv[i], "-ul") == 0) {
             ul_found = 1;
-            if (i + 1 < argc && argv[i + 1][0] != '-')
-            {
+            if (i + 1 < argc && argv[i + 1][0] != '-') {
                 strcpy(user_list, argv[i + 1]);
                 i++;
             }
-            else
-            {
+            else {
                 strcpy(user_list, "./student_list.txt");
             }
         }
-        else if (strncmp(argv[i], "-d:", 3) == 0)
-        {
+        else if (strncmp(argv[i], "-d:", 3) == 0) {
             dest_found = 1;
             strcpy(dest_dir, argv[i] + 3);
         }
-        else if (strncmp(argv[i], "-s:", 3) == 0)
-        {
+        else if (strncmp(argv[i], "-s:", 3) == 0) {
             source_found = 1;
             strcpy(source_dir, argv[i] + 3);
         }
-        else if (strcmp(argv[i], "-dir") == 0)
-        {
+        else if (strcmp(argv[i], "-dir") == 0) {
             *copy_dir_mode = 1;
         }
     }
 
-    if (!ul_found || !dest_found || !source_found)
-    {
+    if (!ul_found || !dest_found || !source_found) {
         printf("ERROR: Faltan argumentos obligatorios\n\n");
         print_usage();
         return -1;
@@ -128,14 +119,12 @@ int main(int argc, char *argv[])
     char source_dir[256] = "";
     int copy_dir_mode = 0;
 
-    if (argc < 2)
-    {
+    if (argc < 2) {
         print_usage();
         return 0;
     }
 
-    if (parse_arguments(argc, argv, user_list, dest_dir, source_dir, &copy_dir_mode) != 0)
-    {
+    if (parse_arguments(argc, argv, user_list, dest_dir, source_dir, &copy_dir_mode) != 0) {
         return 1;
     }
 
@@ -145,42 +134,32 @@ int main(int argc, char *argv[])
     system(cmd);
 
     fp = fopen(user_list, "r");
-    if (fp == NULL)
-    {
+    if (fp == NULL) {
         printf("ERROR: No se pudo abrir el archivo %s\n", user_list);
         return 1;
     }
 
-    while (fscanf(fp, "%s", account) != EOF)
-    {
+    while (fscanf(fp, "%s", account) != EOF) {
         printf("\n\n--------------------------\n-> Procesando %s\n", account);
         
-        if (copy_dir_mode)
-        {
-            if (copy_directory(source_dir, account, dest_dir) == 0)
-            {
+        if (copy_dir_mode) {
+            if (copy_directory(source_dir, account, dest_dir) == 0) {
                 printf("Se copio el directorio %s\n", source_dir);
             }
-            else
-            {
+            else {
                 printf("No se pudo copiar el directorio %s\n", source_dir);
             }
         }
-        else
-        {
-            if (is_file_in_directory(source_dir, account))
-            {
-                if (copy_file(source_dir, account, dest_dir) == 0)
-                {
+        else {
+            if (is_file_in_directory(source_dir, account)) {
+                if (copy_file(source_dir, account, dest_dir) == 0) {
                     printf("Se copio el archivo %s\n", source_dir);
                 }
-                else
-                {
+                else {
                     printf("No se pudo copiar el archivo %s\n", source_dir);
                 }
             }
-            else
-            {
+            else {
                 printf("No se encontro el archivo %s en el directorio de %s\n", source_dir, account);
             }
         }
@@ -213,8 +192,7 @@ int is_file_in_directory(char file[], char student[])
     printf("Buscando %s en %s\n", file, path);
 
     fp = fopen(path, "r");
-    if (fp == NULL)
-    {
+    if (fp == NULL) {
         return 0;
     }
 
@@ -256,8 +234,7 @@ int copy_file(char file[], char student[], char local_dir_name[])
 
     pclose(fp);
 
-    if (strlen(out) != 0)
-    {
+    if (strlen(out) != 0) {
         printf("ERROR con %s : %s \n", student, out);
     }
 
@@ -297,8 +274,7 @@ int copy_directory(char directory[], char student[], char local_dir_name[])
 
     pclose(fp);
 
-    if (strlen(out) != 0)
-    {
+    if (strlen(out) != 0) {
         printf("ERROR con %s : %s \n", student, out);
     }
 
@@ -331,8 +307,7 @@ int build_students_program(char directory[], char student[])
 
     pclose(fp);
 
-    if (strlen(out) != 0)
-    {
+    if (strlen(out) != 0) {
         printf("ERROR con %s : %s \n", student, out);
     }
 
