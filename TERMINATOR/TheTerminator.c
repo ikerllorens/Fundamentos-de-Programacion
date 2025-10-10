@@ -43,6 +43,11 @@ int main(int argc, char *argv[])
     system(cmd);
 
     fp = fopen(argv[1], "r");
+    if (fp == NULL)
+    {
+        printf("ERROR: No se pudo abrir el archivo %s\n", argv[1]);
+        return 1;
+    }
 
     while (fscanf(fp, "%s", account) != EOF)
     {
@@ -69,11 +74,14 @@ int main(int argc, char *argv[])
     return 0;
 }
 
-/*
- * Verifica si un archivo existe en un directorio
+/**
+ * <brief>Verifica si un archivo existe en un directorio</brief>
+ * 
+ * Construye la ruta completa al archivo del estudiante y verifica
+ * si existe intentando abrirlo para lectura.
+ * 
  * <param name="file">Directorio y nombre del archivo a buscar</param>
  * <param name="student">Cuenta del alumno a buscar</param>
- *
  * <return>1 si el archivo existe, 0 si no existe</return>
  */
 int is_file_in_directory(char file[], char student[])
@@ -93,6 +101,7 @@ int is_file_in_directory(char file[], char student[])
         return 0;
     }
 
+    fclose(fp);
     return 1;
 }
 
