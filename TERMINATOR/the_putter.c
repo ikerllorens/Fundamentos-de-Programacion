@@ -33,16 +33,18 @@ int main(int argc, char *argv[])
     char account[16] = "";
     char final_route[256] = "";
 
-    if (argc != 4)
-    {
+    if (argc != 4) {
         printf("Uso: the_putter.out <lista alumnos> <ruta del archivo a copiar> <ruta destino> \n");
         return 0;
     }
 
     fp = fopen(argv[1], "r");
+    if (fp == NULL) {
+        printf("ERROR: No se pudo abrir el archivo %s\n", argv[1]);
+        return 1;
+    }
 
-    while (fscanf(fp, "%s", account) != EOF)
-    {
+    while (fscanf(fp, "%s", account) != EOF) {
         strcpy(final_route, "");
         printf("\n\n--------------------------\n-> Procesando %s\n", account);
         assemble_route(account, argv[3], final_route);
@@ -98,8 +100,7 @@ int copy_to_students(char route[], char route_to_file[])
     fscanf(fp, "%s", out);
     pclose(fp);
 
-    if (strlen(out) != 0)
-    {
+    if (strlen(out) != 0) {
         printf("ERROR con %s : %s \n", route, out);
     }
 
@@ -124,8 +125,9 @@ void assign_permissions(char route[], char filename[], char user[], char user_gr
     char cmd_perm[256] = "chmod 755 ";
     char out[512] = "";
 
-    if (route[strlen(route) - 1] != '/')
+    if (route[strlen(route) - 1] != '/') {
         strcat(route, "/");
+    }
     strcat(route, filename);
 
     strcat(cmd, user);
@@ -143,8 +145,7 @@ void assign_permissions(char route[], char filename[], char user[], char user_gr
     fscanf(fp, "%s", out);
     pclose(fp);
 
-    if (strlen(out) != 0)
-    {
+    if (strlen(out) != 0) {
         printf("ERROR con %s : %s \n", route, out);
     }
 
@@ -152,8 +153,7 @@ void assign_permissions(char route[], char filename[], char user[], char user_gr
     fscanf(fp, "%s", out);
     pclose(fp);
 
-    if (strlen(out) != 0)
-    {
+    if (strlen(out) != 0) {
         printf("ERROR con %s : %s \n", route, out);
     }
 }
