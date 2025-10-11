@@ -1,5 +1,7 @@
 # Fundamentos de Programación
 
+[![Build and Test All Programs](https://github.com/ikerllorens/Fundamentos-de-Programacion/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/ikerllorens/Fundamentos-de-Programacion/actions/workflows/build-and-test.yml)
+
 Este repositorio contiene ejemplos prácticos y ejercicios para aprender los **Fundamentos de Programación** en lenguaje C. Está diseñado específicamente para estudiantes principiantes que están dando sus primeros pasos en el mundo de la programación.
 
 ## 🎯 Objetivo
@@ -96,6 +98,35 @@ Para compilar cualquier archivo `.c`:
 gcc -o nombre_ejecutable archivo.c
 ./nombre_ejecutable
 ```
+
+### Compilar todo el repositorio
+Usa el Makefile en la raíz del proyecto:
+```bash
+# Compilar todos los programas
+make all
+
+# Compilar y verificar
+make check
+
+# Compilar solo una sección específica
+make fundamentos    # o io, arrays, pointers, etc.
+
+# Limpiar archivos generados
+make clean
+
+# Ver todos los comandos disponibles
+make help
+```
+
+## ✅ Integración Continua (CI)
+
+Este repositorio utiliza GitHub Actions para verificar automáticamente que todos los programas compilan correctamente. El badge de estado en la parte superior muestra si la última compilación fue exitosa.
+
+- **CI automático**: Se ejecuta en cada push y pull request
+- **Compilación por secciones**: Cada directorio se compila independientemente
+- **Verificación completa**: Todos los programas válidos son compilados y verificados
+
+Para más detalles sobre el sistema de CI, consulta [.github/README.md](.github/README.md).
 
 ## 📋 Recomendaciones de estudio
 
