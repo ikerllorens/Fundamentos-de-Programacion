@@ -19,6 +19,77 @@ void print_usage(void);
 int parse_arguments(int argc, char *argv[], char *user_list, char *dest_dir, char *source_dir, int *copy_dir_mode);
 
 /**
+ * <brief>Función principal del programa</brief>
+ * 
+ * Procesa una lista de estudiantes, busca archivos específicos en sus
+ * directorios y los copia a un directorio local.
+ * 
+ * <param name="argc">Número de argumentos de línea de comandos</param>
+ * <param name="argv">Arreglo de argumentos</param>
+ * <return>0 si el programa se ejecutó correctamente</return>
+ */
+int main(int argc, char *argv[])
+{
+    FILE *fp;
+    char account[16] = "";
+    char cmd[256] = "";
+    char user_list[256] = "";
+    char dest_dir[256] = "";
+    char source_dir[256] = "";
+    int copy_dir_mode = 0;
+
+    if (argc < 2) {
+        print_usage();
+        return 0;
+    }
+
+    if (parse_arguments(argc, argv, user_list, dest_dir, source_dir, &copy_dir_mode) != 0) {
+        return 1;
+    }
+
+    printf("Creando directorio %s\n", dest_dir);
+    strcpy(cmd, "mkdir -p ");
+    strcat(cmd, dest_dir);
+    system(cmd);
+
+    fp = fopen(user_list, "r");
+    if (fp == NULL) {
+        printf("ERROR: No se pudo abrir el archivo %s\n", user_list);
+        return 1;
+    }
+
+    while (fscanf(fp, "%s", account) != EOF) {
+        printf("\n\n--------------------------\n-> Procesando %s\n", account);
+        
+        if (copy_dir_mode) {
+            if (copy_directory(source_dir, account, dest_dir) == 0) {
+                printf("Se copio el directorio %s\n", source_dir);
+            }
+            else {
+                printf("No se pudo copiar el directorio %s\n", source_dir);
+            }
+        }
+        else {
+            if (is_file_in_directory(source_dir, account)) {
+                if (copy_file(source_dir, account, dest_dir) == 0) {
+                    printf("Se copio el archivo %s\n", source_dir);
+                }
+                else {
+                    printf("No se pudo copiar el archivo %s\n", source_dir);
+                }
+            }
+            else {
+                printf("No se encontro el archivo %s en el directorio de %s\n", source_dir, account);
+            }
+        }
+    }
+
+    fclose(fp);
+
+    return 0;
+}
+
+/**
  * <brief>Muestra el mensaje de uso del programa</brief>
  * 
  * Despliega información sobre cómo usar el programa y sus opciones disponibles.
@@ -95,77 +166,6 @@ int parse_arguments(int argc, char *argv[], char *user_list, char *dest_dir, cha
         print_usage();
         return -1;
     }
-
-    return 0;
-}
-
-/**
- * <brief>Función principal del programa</brief>
- * 
- * Procesa una lista de estudiantes, busca archivos específicos en sus
- * directorios y los copia a un directorio local.
- * 
- * <param name="argc">Número de argumentos de línea de comandos</param>
- * <param name="argv">Arreglo de argumentos</param>
- * <return>0 si el programa se ejecutó correctamente</return>
- */
-int main(int argc, char *argv[])
-{
-    FILE *fp;
-    char account[16] = "";
-    char cmd[256] = "";
-    char user_list[256] = "";
-    char dest_dir[256] = "";
-    char source_dir[256] = "";
-    int copy_dir_mode = 0;
-
-    if (argc < 2) {
-        print_usage();
-        return 0;
-    }
-
-    if (parse_arguments(argc, argv, user_list, dest_dir, source_dir, &copy_dir_mode) != 0) {
-        return 1;
-    }
-
-    printf("Creando directorio %s\n", dest_dir);
-    strcpy(cmd, "mkdir -p ");
-    strcat(cmd, dest_dir);
-    system(cmd);
-
-    fp = fopen(user_list, "r");
-    if (fp == NULL) {
-        printf("ERROR: No se pudo abrir el archivo %s\n", user_list);
-        return 1;
-    }
-
-    while (fscanf(fp, "%s", account) != EOF) {
-        printf("\n\n--------------------------\n-> Procesando %s\n", account);
-        
-        if (copy_dir_mode) {
-            if (copy_directory(source_dir, account, dest_dir) == 0) {
-                printf("Se copio el directorio %s\n", source_dir);
-            }
-            else {
-                printf("No se pudo copiar el directorio %s\n", source_dir);
-            }
-        }
-        else {
-            if (is_file_in_directory(source_dir, account)) {
-                if (copy_file(source_dir, account, dest_dir) == 0) {
-                    printf("Se copio el archivo %s\n", source_dir);
-                }
-                else {
-                    printf("No se pudo copiar el archivo %s\n", source_dir);
-                }
-            }
-            else {
-                printf("No se encontro el archivo %s en el directorio de %s\n", source_dir, account);
-            }
-        }
-    }
-
-    fclose(fp);
 
     return 0;
 }
