@@ -9,7 +9,6 @@
  */
 
 #include <stdio.h>
-#include <stdbool.h>
 
 /**
  * <brief>Función principal del programa</brief>
@@ -31,7 +30,7 @@ int main(void)
 	// en caso de que la opreración booleana sea falsa, nada de lo que se encuentra entre las llaves será ejecutado.
 		
 	// En este if la condición booleana es falsa (false) constantemente, así que el printf no será ejecutado
-	if (false)
+	if (0)
 	{
 		// STUDENTS: En que situación podría ser esto útil? 
 		VariableEjemploA = 25;
