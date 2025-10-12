@@ -14,7 +14,7 @@ POINTERS_DIR = POINTERS
 PROGRAM_FLOW_DIR = PROGRAM\ FLOW
 MAKEFILE_EXAMPLE_DIR = MAKEFILE_EXAMPLE
 EJERCICIOS_DIR = EJERCICIOS
-TERMINATOR_DIR = TERMINATOR
+TOOLS_DIR = TOOLS
 
 # Archivos de Fundamentos
 FUNDAMENTOS_SOURCES = $(FUNDAMENTOS_DIR)/Comentarios.c \
@@ -60,12 +60,12 @@ EJERCICIOS_SOURCES = $(EJERCICIOS_DIR)/Circulo.c \
 EJERCICIOS_OBJECTS = $(EJERCICIOS_SOURCES:.c=.o)
 EJERCICIOS_EXECUTABLES = $(EJERCICIOS_SOURCES:.c=.out)
 
-# Archivos de TERMINATOR
-TERMINATOR_SOURCES = $(TERMINATOR_DIR)/TheTerminator.c \
-                     $(TERMINATOR_DIR)/the_putter.c
+# Archivos de TOOLS
+TOOLS_SOURCES = $(TOOLS_DIR)/calificacion.c \
+                     $(TOOLS_DIR)/the_putter.c
 
-TERMINATOR_OBJECTS = $(TERMINATOR_SOURCES:.c=.o)
-TERMINATOR_EXECUTABLES = $(TERMINATOR_SOURCES:.c=.out)
+TOOLS_OBJECTS = $(TOOLS_SOURCES:.c=.o)
+TOOLS_EXECUTABLES = $(TOOLS_SOURCES:.c=.out)
 
 # Proyecto MAKEFILE_EXAMPLE (compilación con múltiples archivos)
 MAKEFILE_EXAMPLE_SOURCES = $(MAKEFILE_EXAMPLE_DIR)/main.c \
@@ -82,15 +82,15 @@ EJEMPLO_XML_DOC_OBJECT = $(EJEMPLO_XML_DOC_SOURCE:.c=.o)
 # Todos los objetos y ejecutables
 ALL_OBJECTS = $(FUNDAMENTOS_OBJECTS) $(IO_OBJECTS) $(ARRAYS_OBJECTS) \
               $(POINTERS_OBJECTS) $(PROGRAM_FLOW_OBJECT) $(EJERCICIOS_OBJECTS) \
-              $(TERMINATOR_OBJECTS) $(MAKEFILE_EXAMPLE_OBJECTS) $(EJEMPLO_XML_DOC_OBJECT)
+              $(TOOLS_OBJECTS) $(MAKEFILE_EXAMPLE_OBJECTS) $(EJEMPLO_XML_DOC_OBJECT)
 
 ALL_EXECUTABLES = $(FUNDAMENTOS_EXECUTABLES) $(IO_EXECUTABLES) $(ARRAYS_EXECUTABLES) \
                   $(POINTERS_EXECUTABLES) $(PROGRAM_FLOW_EXECUTABLE) $(EJERCICIOS_EXECUTABLES) \
-                  $(TERMINATOR_EXECUTABLES) $(MAKEFILE_EXAMPLE_EXECUTABLE)
+                  $(TOOLS_EXECUTABLES) $(MAKEFILE_EXAMPLE_EXECUTABLE)
 
 # Target principal: compilar todo
 .PHONY: all
-all: fundamentos io arrays pointers program-flow ejercicios terminator makefile-example
+all: fundamentos io arrays pointers program-flow ejercicios tools makefile-example
 
 # Targets por directorio
 .PHONY: fundamentos
@@ -124,9 +124,9 @@ $(PROGRAM_FLOW_EXECUTABLE): $(PROGRAM_FLOW_OBJECT)
 ejercicios: $(EJERCICIOS_EXECUTABLES)
 	@echo "✓ EJERCICIOS compilados correctamente"
 
-.PHONY: terminator
-terminator: $(TERMINATOR_EXECUTABLES)
-	@echo "✓ TERMINATOR compilados correctamente"
+.PHONY: tools
+tools: $(TOOLS_EXECUTABLES)
+	@echo "✓ TOOLS compilados correctamente"
 
 .PHONY: makefile-example
 makefile-example: $(MAKEFILE_EXAMPLE_EXECUTABLE) $(EJEMPLO_XML_DOC_OBJECT)
@@ -174,7 +174,7 @@ help:
 	@echo "  pointers       - Compila programas de POINTERS"
 	@echo "  program-flow   - Compila programas de PROGRAM FLOW"
 	@echo "  ejercicios     - Compila programas de EJERCICIOS"
-	@echo "  terminator     - Compila programas de TERMINATOR"
+	@echo "  tools          - Compila programas de TOOLS"
 	@echo "  makefile-example - Compila el ejemplo de Makefile"
 	@echo "  check          - Compila todo y verifica"
 	@echo "  clean          - Elimina archivos generados (.o, .out, .exe)"

@@ -21,7 +21,7 @@ Este es el workflow principal que se ejecuta automáticamente en:
 2. **build-by-section**: Compila cada sección por separado
    - Usa una matriz para compilar cada directorio independientemente
    - Útil para identificar rápidamente qué sección tiene problemas
-   - Secciones: fundamentos, io, arrays, pointers, program-flow, ejercicios, terminator, makefile-example
+   - Secciones: fundamentos, io, arrays, pointers, program-flow, ejercicios, tools, makefile-example
 
 ## 📋 Workflows Deprecados (Solo Referencia)
 
@@ -50,7 +50,7 @@ El archivo `Makefile` en la raíz del repositorio proporciona los siguientes tar
 - `make pointers` - Compila programas de POINTERS
 - `make program-flow` - Compila programas de PROGRAM FLOW
 - `make ejercicios` - Compila programas de EJERCICIOS
-- `make terminator` - Compila programas de TERMINATOR
+- `make tools` - Compila programas de TOOLS
 - `make makefile-example` - Compila el ejemplo de Makefile
 
 ## 🚀 Uso Local

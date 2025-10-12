@@ -21,7 +21,7 @@ INPUT                  = . \
                          "PROGRAM FLOW" \
                          MAKEFILE_EXAMPLE \
                          EJERCICIOS \
-                         TERMINATOR
+                         TOOLS
 
 FILE_PATTERNS          = *.c \
                          *.h

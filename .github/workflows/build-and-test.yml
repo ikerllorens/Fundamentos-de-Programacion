@@ -40,7 +40,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        section: [fundamentos, io, arrays, pointers, program-flow, ejercicios, terminator, makefile-example]
+        section: [fundamentos, io, arrays, pointers, program-flow, ejercicios, tools, makefile-example]
     
     steps:
       - name: Checkout del repositorio
