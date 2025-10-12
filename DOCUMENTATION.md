@@ -86,8 +86,8 @@ El archivo `Doxyfile` está configurado para generar:
 - ✅ `ABECEDARIO/abecedario_bad.c` - Código con errores intencionales
 - ✅ `SIMON_DICE/simon_dice.c` - Juego de memoria
 
-### TERMINATOR/
-- ✅ `TheTerminator.c` - Herramienta de recolección de archivos
+### TOOLS/
+- ✅ `calificacion.c` - Herramienta de recolección de archivos
 - ✅ `the_putter.c` - Herramienta de distribución de archivos
 
 ## 📋 Etiquetas Doxygen Utilizadas

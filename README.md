@@ -26,7 +26,7 @@ El objetivo de este repositorio es proporcionar una colección organizada de eje
 5) **PROGRAM FLOW** - Control de flujo
 6) **MAKEFILE_EXAMPLE** - Compilación avanzada
 7) **EJERCICIOS** - Ejercicios prácticos
-8) **TERMINATOR** - Herramientas auxiliares
+8) **TOOLS** - Herramientas auxiliares
 
 ### Descripción de cada sección
 
