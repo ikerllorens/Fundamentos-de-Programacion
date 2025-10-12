@@ -1,0 +1,58 @@
+name: Build and Test All Programs
+
+# Ejecutar CI en push y pull requests a main
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  
+  # Permitir ejecución manual desde la UI de GitHub
+  workflow_dispatch:
+
+jobs:
+  build-all:
+    name: Compilar todos los programas
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4
+      
+      - name: Instalar dependencias
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gcc make
+      
+      - name: Compilar todos los programas
+        run: make check
+      
+      - name: Verificar que los ejecutables se crearon
+        run: |
+          echo "Verificando ejecutables creados..."
+          find . -name "*.out" -type f | sort
+          
+      - name: Limpiar archivos generados
+        run: make clean
+        
+  build-by-section:
+    name: Compilar por sección
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        section: [fundamentos, io, arrays, pointers, program-flow, ejercicios, terminator, makefile-example]
+    
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4
+      
+      - name: Instalar dependencias
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gcc make
+      
+      - name: Compilar sección ${{ matrix.section }}
+        run: make ${{ matrix.section }}
+      
+      - name: Limpiar archivos generados
+        run: make clean

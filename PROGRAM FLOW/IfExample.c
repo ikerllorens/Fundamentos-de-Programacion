@@ -30,7 +30,7 @@ int main(void)
 	// en caso de que la opreración booleana sea falsa, nada de lo que se encuentra entre las llaves será ejecutado.
 		
 	// En este if la condición booleana es falsa (false) constantemente, así que el printf no será ejecutado
-	if (false)
+	if (0)
 	{
 		// STUDENTS: En que situación podría ser esto útil? 
 		VariableEjemploA = 25;
@@ -73,8 +73,7 @@ int main(void)
 	// Otro ejemplo de if con un caso especial
 	if (9)
 	{
-		printf("\nEsto (if (9)) es verdadero para los lenguajes de programación (Aunque algunos no admiten un resultado 
-				dentro del if que no sea un resultado booleano)\n");
+		printf("\nEsto (if (9)) es verdadero para los lenguajes de programación (Aunque algunos no admiten un resultado dentro del if que no sea un resultado booleano)\n");
 	}
 	
 	return 0;
