@@ -75,6 +75,18 @@ Ejercicios prácticos para reforzar el aprendizaje:
 
 ## 🚀 Cómo empezar
 
+### 💻 Desarrollo Local con VSCode y SSH
+
+**¿Quieres desarrollar en C desde tu computadora conectándote al servidor de la clase?**
+
+📖 **[Lee la guía completa: Cómo Desarrollar C en tu Máquina Local](COMO_DESARROLLAR_C_LOCAL.md)**
+
+Esta guía te enseña paso a paso cómo:
+- Instalar Visual Studio Code
+- Configurar la extensión Remote-SSH
+- Conectarte al servidor `antares.dci.uia.mx` con tu usuario y contraseña
+- Desarrollar, compilar y ejecutar programas en C remotamente
+
 ### Prerrequisitos
 - Un compilador de C (recomendado: GCC)
 - Un editor de texto o IDE
