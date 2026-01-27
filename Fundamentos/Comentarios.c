@@ -1,20 +1,31 @@
+/**
+ * <file>Comentarios.c</file>
+ * <brief>Programa que ejemplifica diferentes tipos de comentarios y documentación en C</brief>
+ * <author>Iker Llorens</author>
+ * 
+ * Este programa demuestra los diferentes estilos de comentarios en C y la importancia
+ * de la documentación estandarizada. Es importante notar que cada programador, empresa,
+ * organización, o profesor tienen un estilo de documentación. Lo más importante no es
+ * pelear cual es mejor, sino adaptarse al estilo. Varios lenguajes tienen herramientas
+ * que requieren de documentación estandarizada (con un formato específico) para ayudar
+ * al desarrollador a navegar el código más fácilmente.
+ * 
+ * Entradas: Ninguna
+ * Salidas: Imprime el resultado de operaciones matemáticas
+ */
+
 #include <stdio.h>
 
 // Declaración de funciones
 int Cuadrado(int parametro);
 
 /**
- * © Iker Llorens
- * Descripción del programa y su intención. Es importante notar que cada programador, empresa, organización,
- * profesor tienen un estilo de documentación. Lo más importante no es pelear cual es mejor, sino adaptarse al 
- * estilo. Varios lenguajes tienen herramientas que requieren de documentación estandarizada (con un formato 
- * específico) para ayudar al desarrollador a navegar el código más fácilmente. No visto en esta materia.
-
- * Descripción del programa y su intención
- * Entradas:
- * Salidas:
- *
- * Puede ser escrito en inglés o en español
+ * <brief>Función principal del programa</brief>
+ * 
+ * Demuestra el uso de diferentes tipos de comentarios en C y llama a funciones
+ * para realizar operaciones matemáticas básicas.
+ * 
+ * <return>0 si el programa se ejecutó correctamente</return>
  */
 int main(void)
 {
@@ -36,19 +47,14 @@ int main(void)
 }
 
 /**
+ * <brief>Calcula el cuadrado de un número entero</brief>
+ * 
  * Descripción del funcionamiento de la función. Es importante hacer que quien lea nuestro código
- * pueda entender la funcionalidad de la función con esta descripción sin tener que descifrar el código
- * <param name="int">parametro Descripción del parametro que la función recibe</param>
- * <return>Describir el valor de regreso. DEscribir también casos especiales (TODOS los posibles resultados)</return>
-
- * Calculates the square of two integers.
- * <param name="p">The first integer.</param>
- *
- * <return>The square of a and b.</return>
- *
- * @example
- * int result = Cuadrado(2);
- * // result is now 4
+ * pueda entender la funcionalidad de la función con esta descripción sin tener que descifrar el código.
+ * Esta función toma un entero y devuelve su cuadrado.
+ * 
+ * <param name="p">El número entero a elevar al cuadrado</param>
+ * <return>El cuadrado del parámetro p (p * p)</return>
  */
 int Cuadrado(int p)
 {
@@ -56,15 +62,13 @@ int Cuadrado(int p)
 }
 
 /**
- * Calculates the sum of two integers.
- * <param name="a">The first integer.</param>
- * <param name="b">The second integer.</param>
- *
- * <return>The sum of a and b.</return>
- *
- * @example
- * int result = Suma(2, 3);
- * // result is now 5
+ * <brief>Calcula la suma de dos números enteros</brief>
+ * 
+ * Esta función toma dos enteros como parámetros y devuelve su suma.
+ * 
+ * <param name="a">El primer número entero a sumar</param>
+ * <param name="b">El segundo número entero a sumar</param>
+ * <return>La suma de a y b</return>
  */
 int Suma(int a, int b)
 {
