@@ -53,12 +53,12 @@ int main(void)
  * pueda entender la funcionalidad de la función con esta descripción sin tener que descifrar el código.
  * Esta función toma un entero y devuelve su cuadrado.
  * 
- * <param name="p">El número entero a elevar al cuadrado</param>
- * <return>El cuadrado del parámetro p (p * p)</return>
+ * <param name="parametro">El número entero a elevar al cuadrado</param>
+ * <return>El cuadrado del parámetro parametro (parametro * parametro)</return>
  */
-int Cuadrado(int p)
+int Cuadrado(int parametro)
 {
-	return p * p;
+	return parametro * parametro;
 }
 
 /**
