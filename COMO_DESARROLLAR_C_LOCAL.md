@@ -167,7 +167,7 @@ Una vez conectado al servidor, puedes trabajar como si estuvieras en tu máquina
 4. Selecciona la carpeta donde quieres trabajar o crea una nueva
 
 **Crear una carpeta nueva desde la terminal:**
-1. Abre la terminal integrada: `Ctrl+`` (tecla acento grave) o **Terminal > New Terminal**
+1. Abre la terminal integrada: **Ctrl+\`** (tecla acento grave) o **Terminal > New Terminal**
 2. Crea una carpeta para tus proyectos:
    ```bash
    mkdir fundamentos-c
@@ -219,7 +219,7 @@ int main(void)
 ### Compilar el Programa
 
 1. Abre la **Terminal Integrada** en VSCode:
-   - `Ctrl+`` (tecla acento grave)
+   - **Ctrl+\`** (tecla acento grave)
    - O ve a **Terminal > New Terminal**
 
 2. Compila tu programa usando GCC:
@@ -355,7 +355,7 @@ gcc -Wall -Wextra -o programa *.c
 
 ### Atajos de Teclado Útiles en VSCode
 
-- `Ctrl+`` : Abrir/Cerrar terminal integrada
+- **Ctrl+\`** (tecla acento grave): Abrir/Cerrar terminal integrada
 - `Ctrl+P`: Búsqueda rápida de archivos
 - `Ctrl+Shift+P`: Paleta de comandos
 - `Ctrl+/`: Comentar/Descomentar línea
