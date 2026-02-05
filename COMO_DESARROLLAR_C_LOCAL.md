@@ -50,12 +50,14 @@ Antes de comenzar, necesitarás:
 - Arrastra el icono de VSCode a la carpeta "Applications"
 - Abre VSCode desde tu carpeta de Aplicaciones
 
-**En Linux (Ubuntu/Debian):**
+**En Linux (Ubuntu/Debian) para compiutadoras personales:**
 ```bash
 # Descarga e instala usando el gestor de paquetes
 sudo apt update
 sudo apt install code
 ```
+
+Para los laboratorios del CPB, puede que tengas que descargar VS Code como .zip, descomprimir la carpeta y ejecutar directamente el archivo `code`.
 
 ### Paso 3: Verificar la Instalación
 
@@ -224,7 +226,8 @@ int main(void)
 
 2. Compila tu programa usando GCC:
    ```bash
-   gcc -o hola_mundo hola_mundo.c
+   gcc -c hola_mundo.c
+   gcc -o hola_mundo.out hola_mundo.o
    ```
 
    **Explicación del comando:**
@@ -245,19 +248,6 @@ Deberías ver la salida:
 ```
 ¡Hola, Mundo desde el servidor antares!
 ```
-
-### Compilación con Warnings y Debugging
-
-Para una mejor práctica de programación, compila con advertencias y símbolos de depuración:
-
-```bash
-gcc -Wall -Wextra -g -o hola_mundo hola_mundo.c
-```
-
-**Explicación de las banderas:**
-- `-Wall`: Activa la mayoría de las advertencias
-- `-Wextra`: Activa advertencias adicionales
-- `-g`: Incluye información de depuración
 
 ---
 
@@ -346,11 +336,6 @@ cp origen destino
 # Ver el contenido de un archivo
 cat nombre_archivo
 
-# Editar un archivo con nano
-nano nombre_archivo
-
-# Compilar todos los archivos .c del directorio
-gcc -Wall -Wextra -o programa *.c
 ```
 
 ### Atajos de Teclado Útiles en VSCode
@@ -391,7 +376,7 @@ Para asegurarte de que todo está funcionando correctamente:
 
 1. **Guarda tu trabajo frecuentemente**: Usa `Ctrl+S` constantemente para guardar tus cambios
 2. **Usa Git para versionar tu código**: Aprende comandos básicos de Git para mantener un historial de cambios
-3. **Compila con warnings**: Siempre usa `-Wall -Wextra` para detectar posibles problemas
+3. **Compila frecuentemente**: Compila con frecuencia y ve el progreso de tu programa.
 4. **Prueba tu código**: Ejecuta tu programa con diferentes entradas para asegurarte de que funciona correctamente
 5. **Lee los errores del compilador**: Los mensajes de error te dirán exactamente qué está mal
 6. **Comenta tu código**: Escribe comentarios claros para explicar qué hace cada parte de tu programa
