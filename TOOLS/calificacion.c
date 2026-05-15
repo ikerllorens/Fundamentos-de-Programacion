@@ -103,6 +103,7 @@ void print_usage(void)
     printf("  -s:{dir}      Directorio fuente donde se encuentran los archivos a copiar\n");
     printf("\nOpciones adicionales:\n");
     printf("  -dir          Copiar el contenido completo de la carpeta en vez de un archivo específico\n");
+    printf("                (el directorio .git no se copia; el historial de commits se exporta a <alumno>_git_log.txt)\n");
     printf("  -h            Mostrar este mensaje de ayuda\n");
     printf("\nEjemplos:\n");
     printf("  calificacion.out -ul students.txt -d:evaluaciones -s:tarea1.c\n");
@@ -244,8 +245,9 @@ int copy_file(char file[], char student[], char local_dir_name[])
 /**
  * <brief>Copia un directorio completo del estudiante al directorio local</brief>
  * 
- * Construye el comando de copia recursiva y ejecuta la operación, reportando
- * cualquier error que ocurra durante el proceso.
+ * Exporta el historial de git del repositorio del estudiante a un archivo de
+ * texto para revisión, copia el directorio al destino y elimina el subdirectorio
+ * .git para evitar la creación de submódulos de git.
  * 
  * <param name="directory">Nombre del directorio a copiar</param>
  * <param name="student">Nombre de usuario del estudiante</param>
@@ -254,31 +256,45 @@ int copy_file(char file[], char student[], char local_dir_name[])
  */
 int copy_directory(char directory[], char student[], char local_dir_name[])
 {
-    char cmd[512] = "cp -r /home/";
+    char cmd[1024] = "";
     char out[256] = "";
+    char src_path[256] = "";
+    char dest_path[256] = "";
+    char git_log_path[256] = "";
     FILE *fp;
 
-    strcat(cmd, student);
-    strcat(cmd, "/");
-    strcat(cmd, directory);
-    strcat(cmd, " ./");
-    strcat(cmd, local_dir_name);
-    strcat(cmd, "/");
-    strcat(cmd, student);
+    snprintf(src_path, sizeof(src_path), "/home/%s/%s", student, directory);
+    snprintf(dest_path, sizeof(dest_path), "./%s/%s", local_dir_name, student);
+    snprintf(git_log_path, sizeof(git_log_path), "./%s/%s_git_log.txt", local_dir_name, student);
 
     printf("Copiando directorio %s de %s\n", directory, student);
 
+    /* Exportar historial de git a archivo de texto para revisión */
+    snprintf(cmd, sizeof(cmd), "git -C %s log --oneline > %s 2>&1", src_path, git_log_path);
+    system(cmd);
+
+    /* Copiar directorio recursivamente */
+    snprintf(cmd, sizeof(cmd), "cp -r %s %s", src_path, dest_path);
     fp = popen(cmd, "r");
-
-    fscanf(fp, "%s", out);
-
+    if (fp == NULL) {
+        printf("ERROR: No se pudo ejecutar el comando de copia para %s\n", student);
+        return 1;
+    }
+    fscanf(fp, "%255s", out);
     pclose(fp);
 
     if (strlen(out) != 0) {
         printf("ERROR con %s : %s \n", student, out);
+        return strlen(out);
     }
 
-    return strlen(out);
+    /* Eliminar directorio .git para evitar la creación de submódulos */
+    snprintf(cmd, sizeof(cmd), "rm -rf %s/.git", dest_path);
+    if (system(cmd) != 0) {
+        printf("ADVERTENCIA: No se pudo eliminar el directorio .git de %s\n", dest_path);
+    }
+
+    return 0;
 }
 
 /**
